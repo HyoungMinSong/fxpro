@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="exitButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" text="종료" AnchorPane.leftAnchor="900.0" AnchorPane.topAnchor="30.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="359.0" layoutY="100.0" text="xx 관리 프로그램" AnchorPane.leftAnchor="359.0" AnchorPane.topAnchor="100.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1000.0" spacing="50.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" text="영업">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" text="매출">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" text="품목등록">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" text="재고관리">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" text="회원관리">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="100.0" text="직원관리">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
+
