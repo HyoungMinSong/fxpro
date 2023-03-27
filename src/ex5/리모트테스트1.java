@@ -15,7 +15,8 @@ public class 리모트테스트1 {
 		//리모트 어떻게함
 		//리모트 어떻게함
 		//리모트 어떻게함 
-		//https://hyunipad.tistory.com/70 이거보고 따라하는 중 
+		//https://hyunipad.tistory.com/70 이거보고 따라하는 중
+		//8시임 
 	}
 
 }
