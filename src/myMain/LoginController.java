@@ -23,6 +23,14 @@ public class LoginController implements Initializable{
 //	private Stage primaryStage;
 //	private Opener opener;
 	private LoginService service;
+	private Stage primaryStage;
+	private Opener opener;
+	
+	
+
+	public void setOpener(Opener opener) {
+		this.opener = opener;
+	}
 
 	public void todayTicket() {
 		System.out.println("당일 이용권 씬 넣기");
@@ -38,6 +46,7 @@ public class LoginController implements Initializable{
 	
 	public void seatChange() {
 		System.out.println("자리이동 씬 넣기");
+		opener.seatChangeOpen();
 	}
 	
 	public void timeExtend() {
