@@ -1,9 +1,17 @@
 package seatView;
 
 public class seatViewDTO {
+	//SELECT seat_num, seat_use, seat.member_id,member_time FROM seat,member WHERE seat_use=
 	private String seat_num;
 	private String seat_use;
 	private String member_id;
+	private String member_time;
+	public String getMember_time() {
+		return member_time;
+	}
+	public void setMember_time(String member_time) {
+		this.member_time = member_time;
+	}
 	public String getSeat_num() {
 		return seat_num;
 	}
