@@ -120,6 +120,7 @@ public class Opener {
 		
 		sv.setSeatView(seatViewForm);
 		sv.startSeat(id);
+		sv.setOpener(this);
 		
 		Scene scene = new Scene(seatViewForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
 		primaryStage.setTitle("자리 이동");
@@ -140,7 +141,47 @@ public class Opener {
 		payController pc = loader.getController();
 		pc.setOpener(this);
 		
-		Scene scene = new Scene(TodayTicketOpenForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
+		Scene scene = new Scene(TodayTicketOpenForm);  
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+	public void timeExtendOpen() {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("timeExtend.fxml"));
+		
+		Parent timeExtendOpenForm = null;
+		try {
+			timeExtendOpenForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		TimeExtendController tc = loader.getController();
+		tc.setOpener(this);
+		
+		Scene scene = new Scene(timeExtendOpenForm);  
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+	public void lockerTicketOpen() {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("lockerForm.fxml"));
+		
+		Parent lockerViewForm = null;
+		try {
+			lockerViewForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		LockerController lc = loader.getController();
+		
+		lc.setLockerForm(lockerViewForm);
+		lc.startLocker();
+		
+		Scene scene = new Scene(lockerViewForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
 		primaryStage.setTitle("자리 이동");
 		primaryStage.setScene(scene);
 		primaryStage.show();

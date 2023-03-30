@@ -45,21 +45,21 @@
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="542.0" spacing="30.0">
                      <children>
                         <Button fx:id="s13" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="13" />
-                        <Button fx:id="s14" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="14" />
-                        <Button fx:id="s15" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="15" />
-                        <Button fx:id="s16" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="16" />
-                        <Button fx:id="s17" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="17" />
-                        <Button fx:id="s18" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="18" />
+                        <Button fx:id="s14" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="14" />
+                        <Button fx:id="s15" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="15" />
+                        <Button fx:id="s16" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="16" />
+                        <Button fx:id="s17" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="17" />
+                        <Button fx:id="s18" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="18" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="542.0" spacing="30.0">
                      <children>
-                        <Button fx:id="s19" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="19" />
-                        <Button fx:id="s20" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="20" />
-                        <Button fx:id="s21" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="21" />
-                        <Button fx:id="s22" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="22" />
-                        <Button fx:id="s23" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="23" />
-                        <Button fx:id="s24" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="24" />
+                        <Button fx:id="s19" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="19" />
+                        <Button fx:id="s20" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="20" />
+                        <Button fx:id="s21" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="21" />
+                        <Button fx:id="s22" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="22" />
+                        <Button fx:id="s23" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="23" />
+                        <Button fx:id="s24" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="50.0" prefWidth="50.0" text="24" />
                      </children>
                   </HBox>
                </children>
@@ -72,10 +72,16 @@
       <Text layoutX="120.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manual" textAlignment="CENTER" wrappingWidth="78.44140625" />
       <Text layoutX="432.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="결제정보" textAlignment="CENTER" wrappingWidth="78.44140625" />
       <TextField fx:id="member_id_field" layoutX="424.0" layoutY="600.0" />
-      <TextField fx:id="seatInfo" layoutX="424.0" layoutY="650.0" />
+      <TextField fx:id="seatInfo" layoutX="424.0" layoutY="683.0" />
       <Label layoutX="335.0" layoutY="605.0" text="member_id" />
-      <Label layoutX="335.0" layoutY="655.0" prefHeight="19.0" prefWidth="78.0" text="seat" />
-      <Button layoutX="496.0" layoutY="796.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="next&gt;" />
-      <Button layoutX="367.0" layoutY="796.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="&lt;prev" />
+      <Label layoutX="337.0" layoutY="688.0" prefHeight="19.0" prefWidth="78.0" text="seat" />
+      <Button layoutX="496.0" layoutY="796.0" mnemonicParsing="false" onAction="#seatNext" prefHeight="29.0" prefWidth="100.0" text="next&gt;" />
+      <Button layoutX="367.0" layoutY="796.0" mnemonicParsing="false" onAction="#prevBtn" prefHeight="29.0" prefWidth="100.0" text="&lt;prev" />
+      <Button fx:id="s110" layoutX="18.0" layoutY="13.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: orange; -fx-border-color: black;" text="1" />
+      <Button fx:id="s1101" layoutX="105.0" layoutY="13.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #D3D3D3; -fx-border-color: black;" text="1" />
+      <Label layoutX="48.0" layoutY="18.0" prefHeight="19.0" prefWidth="58.0" text="사용중" />
+      <Label layoutX="135.0" layoutY="18.0" prefHeight="19.0" prefWidth="78.0" text="사용가능" />
+      <Label layoutX="335.0" layoutY="645.0" prefHeight="19.0" prefWidth="82.0" text="Time" />
+      <TextField fx:id="member_time_info" layoutX="424.0" layoutY="640.0" />
    </children>
 </Pane>

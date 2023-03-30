@@ -23,6 +23,8 @@ public class Main extends Application {
 		primaryStage.setTitle("로그인 화면");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
+		
 
 	}
 	public static void main(String[] args) {

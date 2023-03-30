@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myMain.TimeExtendController">
+   <children>
+      <FlowPane alignment="CENTER" prefHeight="157.0" prefWidth="650.0">
+         <children>
+            <Label text="이용시간 연장">
+               <font>
+                  <Font name="KoPubBatang Bold" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#todayTicketExtend" prefHeight="76.0" prefWidth="501.0" text="당일 이용권 연장">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" top="40.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#seasonTicketExtend" prefHeight="76.0" prefWidth="501.0" text="정기 이용권 연장">
+               <font>
+                  <Font size="33.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" top="40.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#lockerTicketExtend" prefHeight="76.0" prefWidth="501.0" text="사물함 이용권 연장">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" top="40.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#prevBtn" prefHeight="76.0" prefWidth="501.0" text="이전으로">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" top="40.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

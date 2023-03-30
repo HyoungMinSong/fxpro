@@ -25,7 +25,12 @@ public class seatViewController implements Initializable{
 	private Stage primaryStage;
 	private Button btn ;
 	private Parent seatView;
+	private Opener opener;
 	
+	
+	public void setOpener(Opener opener) {
+		this.opener = opener;
+	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		service = new seatViewService();
@@ -48,7 +53,14 @@ public class seatViewController implements Initializable{
 		
 	}
 	
+	// next>버튼을 눌렀을때 작업
+	public void seatNext() {
+		service.seatNext(seatView);
+	}
 	
+	public void prevBtn() { //이전으로 버튼
+		opener.homeChangeOpen();
+	}
 	
 	
 	

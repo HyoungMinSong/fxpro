@@ -43,6 +43,7 @@ public class LoginController implements Initializable{
 	
 	public void lockerTicket() {
 		System.out.println("사물함 이용권 씬 넣기");
+		opener.lockerTicketOpen();
 	}
 	
 	public void seatChange() {
@@ -52,6 +53,7 @@ public class LoginController implements Initializable{
 	
 	public void timeExtend() {
 		System.out.println("연장하기 씬 넣기");
+		opener.timeExtendOpen();
 	}
 	
 	public void seatCheckOut() {
