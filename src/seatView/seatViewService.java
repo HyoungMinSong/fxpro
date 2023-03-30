@@ -1,4 +1,4 @@
-package myMain;
+package seatView;
 
 import java.util.ArrayList;
 

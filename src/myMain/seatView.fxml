@@ -71,9 +71,11 @@
       <TextArea layoutX="18.0" layoutY="558.0" prefHeight="300.0" prefWidth="283.0" text="1.Please keep your seat clean&#10;&#10;2.One seat , One Drink&#10;&#10;3.Do not make noise" />
       <Text layoutX="120.0" layoutY="533.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manual" textAlignment="CENTER" wrappingWidth="78.44140625" />
       <Text layoutX="432.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="결제정보" textAlignment="CENTER" wrappingWidth="78.44140625" />
-      <TextField layoutX="424.0" layoutY="600.0" />
+      <TextField fx:id="member_id_field" layoutX="424.0" layoutY="600.0" />
       <TextField fx:id="seatInfo" layoutX="424.0" layoutY="650.0" />
       <Label layoutX="335.0" layoutY="605.0" text="member_id" />
       <Label layoutX="335.0" layoutY="655.0" prefHeight="19.0" prefWidth="78.0" text="seat" />
+      <Button layoutX="496.0" layoutY="796.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="next&gt;" />
+      <Button layoutX="367.0" layoutY="796.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="&lt;prev" />
    </children>
 </Pane>

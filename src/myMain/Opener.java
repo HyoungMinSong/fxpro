@@ -119,7 +119,7 @@ public class Opener {
 		seatViewController sv = loader.getController();
 		
 		sv.setSeatView(seatViewForm);
-		sv.startSeat();
+		sv.startSeat(id);
 		
 		Scene scene = new Scene(seatViewForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
 		primaryStage.setTitle("자리 이동");
