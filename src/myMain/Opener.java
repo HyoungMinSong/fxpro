@@ -12,13 +12,13 @@ public class Opener {
 	private Stage primaryStage;
 	private FXMLLoader homeloader; //홈 fmxl 로더
 	private Parent loginForm;
-	private Scene scene;
+	private Scene sceneHome;
 	public void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 	}
 	
 	public void setScene(Scene scene) {
-		this.scene = scene;
+		this.sceneHome = scene;
 	}
 	
 //	public void regOpen() {
@@ -98,12 +98,52 @@ public class Opener {
 //			System.out.println("로그인폼 확인 : " + loginForm);
 //			Scene scene = new Scene(loginForm);
 			primaryStage.setTitle("로그인 화면");
-			primaryStage.setScene(scene);
+			primaryStage.setScene(sceneHome);
 			primaryStage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		} 
+	}
+
+	public void seatSelectOpen(String id) {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("seatView.fxml"));
+		
+		Parent seatViewForm = null;
+		try {
+			seatViewForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		seatViewController sv = loader.getController();
+		
+		sv.setSeatView(seatViewForm);
+		sv.startSeat();
+		
+		Scene scene = new Scene(seatViewForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+	public void TodayTicketOpen() {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("pay.fxml"));
+		
+		Parent TodayTicketOpenForm = null;
+		try {
+			TodayTicketOpenForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		payController pc = loader.getController();
+		pc.setOpener(this);
+		
+		Scene scene = new Scene(TodayTicketOpenForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 
 

@@ -34,6 +34,7 @@ public class LoginController implements Initializable{
 
 	public void todayTicket() {
 		System.out.println("당일 이용권 씬 넣기");
+		opener.TodayTicketOpen();
 	}
 	
 	public void seasonTicket() {
@@ -72,6 +73,7 @@ public class LoginController implements Initializable{
 			} else {
 				at.setContentText("로그인 성공");
 				System.out.println("이용권 사용 씬 넣기");
+				opener.seatSelectOpen(id);
 			}
 		}
 		
