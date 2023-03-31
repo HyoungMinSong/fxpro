@@ -1,6 +1,6 @@
 package myMain;
 
-public class PayTodayDTO {
+public class ApiTicketDTO {
 	private String id;
 	private String name;
 	private int value;

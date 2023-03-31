@@ -46,29 +46,29 @@ public class PayDAO {
 
 
 
-	public ArrayList<PayTodayDTO> getTicket() {
-		// TODO Auto-generated method stub
-		try {
-		ps = con.prepareStatement("select * from ticket_table where ticket_id like 'D%'");
-		rs = ps.executeQuery();
-		ArrayList<PayTodayDTO> list = new ArrayList<>();
-		while(rs.next()) {
-			PayTodayDTO dto = new PayTodayDTO();
-			dto.setId(rs.getString(1));
-			dto.setName(rs.getString(2));
-			dto.setValue(rs.getInt(3));
-			dto.setPrice(rs.getInt(4));
-			list.add(dto);
-		}
-		return list;
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		
-		return null;
-	}
+//	public ArrayList<PayTodayDTO> getTicket() {
+//		// TODO Auto-generated method stub
+//		try {
+//		ps = con.prepareStatement("select * from ticket_table where ticket_id like 'D%'");
+//		rs = ps.executeQuery();
+//		ArrayList<PayTodayDTO> list = new ArrayList<>();
+//		while(rs.next()) {
+//			PayTodayDTO dto = new PayTodayDTO();
+//			dto.setId(rs.getString(1));
+//			dto.setName(rs.getString(2));
+//			dto.setValue(rs.getInt(3));
+//			dto.setPrice(rs.getInt(4));
+//			list.add(dto);
+//		}
+//		return list;
+//		}
+//		catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		
+//		return null;
+//	}
 
 
 }

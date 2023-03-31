@@ -47,6 +47,30 @@ public class ApiDAO {
 			e.printStackTrace();
 		}
 	}
+
+	public ApiTicketDTO getTicket(String ticketId) {
+		// TODO Auto-generated method stub
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+		ps = con.prepareStatement("select * from ticket_table where ticket_id = ?");
+		ps.setString(1, ticketId);
+		rs = ps.executeQuery();
+		if(rs.next()) {
+			ApiTicketDTO dto = new ApiTicketDTO();
+			dto.setId(rs.getString(1));
+			dto.setName(rs.getString(2));
+			dto.setValue(rs.getInt(3));
+			dto.setPrice(rs.getInt(4));
+			return dto;
+		}}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-	
+		
+		return null;
+	}
+		
+
 }

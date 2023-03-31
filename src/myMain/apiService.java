@@ -1,6 +1,12 @@
 package myMain;
 
 public class apiService {
+	private ApiDAO dao;
+	
+	public apiService() {
+		dao = new ApiDAO();
+	}
+	
 	public void apiProc(apiDTO api) {
 		
 		// 정보 출력
@@ -30,6 +36,11 @@ public class apiService {
 			
 		}
 		
+	}
+	
+	public ApiTicketDTO ticketDAO(String ticketId) {
+		// TODO Auto-generated method stub
+		return dao.getTicket(ticketId);
 	}
 	
 }

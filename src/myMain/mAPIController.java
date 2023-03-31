@@ -40,6 +40,15 @@ public class mAPIController implements Initializable {
 		payment.setText(paydto.getPrice()+"원");
 	}
 
+	public void dataProc(String ticketId, String hp, String cardOrHyoun) {
+		System.out.println("확인");
+		ApiTicketDTO apd = service.ticketDAO(ticketId);
+		System.out.println(apd.getId());
+		System.out.println(apd.getName());
+		System.out.println(apd.getPrice());
+		System.out.println(apd.getValue());
+		
+	}
 
 	//  확인 버튼
 	public void check() {

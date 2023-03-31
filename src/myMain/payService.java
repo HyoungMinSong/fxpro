@@ -24,10 +24,10 @@ public class payService {
 	public void choice(payDTO pay) {
 		CommonService.msg("상품을 선택해주세요.");
 	}
-	public ArrayList<PayTodayDTO> getTicket() {
-		// TODO Auto-generated method stub
-		return dao.getTicket();
-	}
+//	public ArrayList<PayTodayDTO> getTicket() {
+//		// TODO Auto-generated method stub
+//		return dao.getTicket();
+//	}
 	
 	
 	

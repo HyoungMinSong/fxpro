@@ -198,7 +198,8 @@ public class Opener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-//		mAPIController lc = loader.getController();
+		mAPIController mc = loader.getController();
+		mc.dataProc(ticketId,hp,cardOrHyoun);
 	
 		
 		Scene scene = new Scene(mAPIForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
