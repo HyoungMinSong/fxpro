@@ -89,11 +89,11 @@ public class mAPIController implements Initializable {
 		
 		api.setBuyname(productName.getText());
 		api.setEntrydate(date);
-		api.setMemberId(paydto.getMemberId());
+		api.setMemberId(getHp());
 		api.setMemberTime(productName.getText());
-		api.setPrice(paydto.getPrice());
+		api.setPrice(apd.getPrice());
 		api.setEntryprice(Integer.parseInt(entryPrice.getText()));
-//		api.setBuyby(getCardOrHyoun(cardOrHyoun));
+		api.setBuyby(getCardOrHyoun());
 //		
 		service.apiProc(api);
 		System.out.println("메인 화면으로 이동");
