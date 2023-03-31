@@ -1,21 +1,22 @@
 package myMain;
 
-import pay.CommonService;
+import java.util.ArrayList;
 
 public class payService {
+	private PayDAO dao;
+	
+	public payService() {
+		dao = new PayDAO();
+	}
 	public void payProc(payDTO pay) {
 
 		// 정보 출력
 		System.out.println("아이디 : " + pay.getMemberId());
 		System.out.println("시간 : " + pay.getMemberTime());
 		System.out.println("금액 : " + pay.getPrice());
+		System.out.println("결제방법 : " + pay.getBuyby());
 		
-		// 아이디 검증
-		if(pay.getMemberId().length()!=11){
-			CommonService.msg("휴대폰번호를 입력하세요.");
-			return;
-		}
-		
+
 		// 회원 가입
 
 		
@@ -23,4 +24,11 @@ public class payService {
 	public void choice(payDTO pay) {
 		CommonService.msg("상품을 선택해주세요.");
 	}
+	public ArrayList<PayTodayDTO> getTicket() {
+		// TODO Auto-generated method stub
+		return dao.getTicket();
+	}
+	
+	
+	
 }
