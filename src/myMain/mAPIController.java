@@ -26,6 +26,27 @@ public class mAPIController implements Initializable {
 	TextField entryPrice;
 	private payDTO paydto;
 	private apiService service;
+	private String hp;
+	private String cardOrHyoun;
+	public ApiTicketDTO apd;
+	
+	
+	public String getHp() {
+		return hp;
+	}
+
+	public void setHp(String hp) {
+		this.hp = hp;
+	}
+
+	public String getCardOrHyoun() {
+		return cardOrHyoun;
+	}
+
+	public void setCardOrHyoun(String cardOrHyoun) {
+		this.cardOrHyoun = cardOrHyoun;
+	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		paydto = new payDTO();
@@ -36,17 +57,20 @@ public class mAPIController implements Initializable {
 		SimpleDateFormat formatter2= new SimpleDateFormat("HH:mm");
 		entryTime.setText(formatter2.format(date));
 		
-		productName.setText((paydto.getMemberTime()/60)+"시간");
-		payment.setText(paydto.getPrice()+"원");
+		
 	}
 
 	public void dataProc(String ticketId, String hp, String cardOrHyoun) {
 		System.out.println("확인");
-		ApiTicketDTO apd = service.ticketDAO(ticketId);
+		apd = service.ticketDAO(ticketId);
 		System.out.println(apd.getId());
 		System.out.println(apd.getName());
 		System.out.println(apd.getPrice());
 		System.out.println(apd.getValue());
+		productName.setText(apd.getName());
+		payment.setText(apd.getPrice()+"원");
+		setHp(hp);
+		setCardOrHyoun(cardOrHyoun);
 		
 	}
 
@@ -54,13 +78,22 @@ public class mAPIController implements Initializable {
 	public void check() {
 		Date date = new Date(System.currentTimeMillis());
 		apiDTO api = new apiDTO();
+		if(entryPrice.getText().equals("")) {
+			CommonService.msg("금액을 입력해주세요.");
+			return;
+		}
+		if(apd.getPrice()> Integer.parseInt(entryPrice.getText())) {
+			CommonService.msg("금액이 부족합니다.");
+			return;
+		}
+		
 		api.setBuyname(productName.getText());
 		api.setEntrydate(date);
 		api.setMemberId(paydto.getMemberId());
 		api.setMemberTime(productName.getText());
 		api.setPrice(paydto.getPrice());
 		api.setEntryprice(Integer.parseInt(entryPrice.getText()));
-		api.setBuyby(paydto.getBuyby());
+//		api.setBuyby(getCardOrHyoun(cardOrHyoun));
 //		
 		service.apiProc(api);
 		System.out.println("메인 화면으로 이동");
