@@ -1,4 +1,4 @@
-package pay;
+package mAPI;
 
 public class payDTO {
 	private String memberId;
