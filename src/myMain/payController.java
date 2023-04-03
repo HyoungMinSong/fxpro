@@ -1,6 +1,7 @@
 package myMain;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -27,7 +28,6 @@ public class payController implements Initializable {
 	private payService service;
 	private Opener opener;
 	
-	
 
 	public void setOpener(Opener opener) {
 		this.opener = opener;
@@ -40,8 +40,8 @@ public class payController implements Initializable {
 		memberId.textProperty().addListener((a, before, after) -> {
 			String result = idLengthCheck(after);
 			memberId.setText(result);
+			
 		});
-
 	}
 
 	// 아이디 길이 "010"빼고 8자리
@@ -53,71 +53,73 @@ public class payController implements Initializable {
 
 	}
 
-	//  현금결제 버튼
-	public void payProc() {
-		payDTO pay = new payDTO();
+	// 현금결제 버튼
+	   public void payProc() {
+	      // 아이디 검증
+	      if (memberId.getText().length() != 11) {
+	         CommonService.msg("휴대폰번호를 입력하세요.");
+	         return;
+	      }
 
-		pay.setMemberId(memberId.getText());
-		//시간 = 분단위
-		if (button1.isSelected()) {
-			pay.setMemberTime(120);
-			pay.setPrice(4000);
-		} else if (button2.isSelected()) {
-			pay.setMemberTime(180);
-			pay.setPrice(6000);
-		} else if (button3.isSelected()) {
-			pay.setMemberTime(240);
-			pay.setPrice(7000);
-		} else if (button4.isSelected()) {
-			pay.setMemberTime(360);
-			pay.setPrice(9000);
-		} else if (button5.isSelected()) {
-			pay.setMemberTime(540);
-			pay.setPrice(11000);
-		} else if (button6.isSelected()) {
-			pay.setMemberTime(720);
-			pay.setPrice(12000);
-		}else {
-			service.choice(pay);
-			return;
-		}
+	      // 시간 = 분단위
+	      if (button1.isSelected()) {
+	         opener.mApiOpen("D2", memberId.getText(), "cash");
+	      } else if (button2.isSelected()) {
+	         opener.mApiOpen("D3", memberId.getText(), "cash");
+	      } else if (button3.isSelected()) {
+	         opener.mApiOpen("D4", memberId.getText(), "cash");
+	      } else if (button4.isSelected()) {
+	         opener.mApiOpen("D6", memberId.getText(), "cash");
+	      } else if (button5.isSelected()) {
+	         opener.mApiOpen("D9", memberId.getText(), "cash");
+	      } else if (button6.isSelected()) {
+	         opener.mApiOpen("D12", memberId.getText(), "cash");
+	      } else {
+	         CommonService.msg("상품을 선택해주세요.");
+	         return;
+	      }
 
-		service.payProc(pay);
-		System.out.println("현금 결제창 이동");
-	}
+	      System.out.println("현금 결제창 이동");
+	   }
+
+	   // 카드결제 버튼
+	   public void cardProc() {
+	      // 아이디 검증
+	      if (memberId.getText().length() != 11) {
+	         CommonService.msg("휴대폰번호를 입력하세요.");
+	         return;
+	      }
+
+	      // 시간 = 분단위
+	      if (button1.isSelected()) {
+	         opener.mApiOpen("D2", memberId.getText(), "card");
+	      } else if (button2.isSelected()) {
+	         opener.mApiOpen("D3", memberId.getText(), "card");
+	      } else if (button3.isSelected()) {
+	         opener.mApiOpen("D4", memberId.getText(), "card");
+	      } else if (button4.isSelected()) {
+	         opener.mApiOpen("D6", memberId.getText(), "card");
+	      } else if (button5.isSelected()) {
+	         opener.mApiOpen("D9", memberId.getText(), "card");
+	      } else if (button6.isSelected()) {
+	         opener.mApiOpen("D12", memberId.getText(), "card");
+	      } else {
+	         CommonService.msg("상품을 선택해주세요.");
+	         return;
+	      }
+
+	      System.out.println("카드 결제창 이동");
+	   }
 	
-	// 카드결제 버튼
-	public void cardProc() {
-		payDTO pay = new payDTO();
-
-		pay.setMemberId(memberId.getText());
-
-		if (button1.isSelected()) {
-			pay.setMemberTime(120);
-			pay.setPrice(4000);
-		} else if (button2.isSelected()) {
-			pay.setMemberTime(180);
-			pay.setPrice(6000);
-		} else if (button3.isSelected()) {
-			pay.setMemberTime(240);
-			pay.setPrice(7000);
-		} else if (button4.isSelected()) {
-			pay.setMemberTime(360);
-			pay.setPrice(9000);
-		} else if (button5.isSelected()) {
-			pay.setMemberTime(540);
-			pay.setPrice(11000);
-		} else if (button6.isSelected()) {
-			pay.setMemberTime(720);
-			pay.setPrice(12000);
-		}else{
-			service.choice(pay);
-			return;
-		}
-		
-		service.payProc(pay);
-		System.out.println("카드 결제창 이동");
-	}
+	
+//	public void dtoTest(ArrayList<PayTodayDTO> list) {
+//		for(PayTodayDTO dto : list) {
+//			System.out.println(dto.getId());
+//			System.out.println(dto.getName());
+//			System.out.println(dto.getPrice());
+//			System.out.println(dto.getValue());
+//		}
+//	}
 
 	// 회원 화면에서 취소 버튼
 	public void payCancelProc() {
