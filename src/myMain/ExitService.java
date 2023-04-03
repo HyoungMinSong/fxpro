@@ -54,4 +54,10 @@ public class ExitService {
 			// TODO Auto-generated method stub
 			return dao.updateMember(min,member_id);
 		}
+
+
+		public String memberCheck(String member_id) {
+			// TODO Auto-generated method stub
+			return dao.memberCheck(member_id);
+		}
 		}

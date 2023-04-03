@@ -98,6 +98,26 @@ public class ExitDAO {
 			}
 			return a;
 		}
+
+		public String memberCheck(String member_id) {
+			// TODO Auto-generated method stub
+			String sql = "SELECT member_time FROM member WHERE member_id=?";
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			String seatUse = null;
+			try {
+				ps = con.prepareStatement(sql);
+				ps.setString(1, member_id);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					seatUse = rs.getString(1);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			return seatUse;
+		}
 	}
 
 

@@ -29,7 +29,7 @@ public class LockerService {
 	}
 	for(LockerDTO data : dataList) {
 		//사용중이지 않은 데이터를 가져와야함.
-		String useLocker = "lock#"+data.getLocker_num();
+		String useLocker = "#lock"+data.getLocker_num();
 		System.out.println("useLocker 는 ? " + useLocker);
 		Button btn2 =(Button)locker.lookup(useLocker);
 		btn2.setStyle("-fx-background-color:ORANGE;"+"-fx-border-color:BLACK");
