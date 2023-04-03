@@ -2,6 +2,7 @@ package myMain;
 
 import java.net.URL;
 import java.sql.Date;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
@@ -77,6 +78,9 @@ public class mAPIController implements Initializable {
 	//  확인 버튼
 	public void check() {
 		Date date = new Date(System.currentTimeMillis());
+//		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+//		String a = formatter.format(new Date(System.currentTimeMillis()));
+//		date = formatter.parse(a);
 		apiDTO api = new apiDTO();
 		if(entryPrice.getText().equals("")) {
 			CommonService.msg("금액을 입력해주세요.");
@@ -90,12 +94,14 @@ public class mAPIController implements Initializable {
 		api.setBuyname(productName.getText());
 		api.setEntrydate(date);
 		api.setMemberId(getHp());
-		api.setMemberTime(productName.getText());
+		api.setMemberTime(apd.getValue());
 		api.setPrice(apd.getPrice());
 		api.setEntryprice(Integer.parseInt(entryPrice.getText()));
 		api.setBuyby(getCardOrHyoun());
+		api.setTicketid(apd.getId());
 //		
 		service.apiProc(api);
+		CommonService.msg("결제 되었습니다.");
 		System.out.println("메인 화면으로 이동");
 	}
 	

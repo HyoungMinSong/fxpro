@@ -21,7 +21,7 @@ public class apiLoginDAO {
 	}
 	
 	public String loginProc(String entryid) {
-		String sql = "SELECT member_id FROM buy WHERE member_id=?";
+		String sql = "SELECT member_id FROM member WHERE member_id=?";
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		String id = null;
