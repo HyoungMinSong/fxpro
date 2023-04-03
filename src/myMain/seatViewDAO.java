@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class seatViewDAO {
 
@@ -14,7 +15,8 @@ public class seatViewDAO {
 	private ResultSet rs;
 	
 	public seatViewDAO() {
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		
+		String url = "jdbc:oracle:thin:@localhost:1522:xe";
 		String username = "douzone";
 		String password = "oracle";
 
@@ -27,7 +29,7 @@ public class seatViewDAO {
 	}
 	
 	public ArrayList<seatViewDTO> selectUseSeat() {//사용중인 좌석정보를 가져오기.
-		String sql = "SELECT seat_num, seat_use, seat.member_id,member_time FROM seat,member WHERE seat_use=?";  //
+		String sql = "SELECT seat_num, seat_use, seat.member_id, member.member_time FROM seat,member WHERE seat_use=?";  //
 		ArrayList<seatViewDTO> dataList = new ArrayList<>();
 		
 		try {
@@ -61,7 +63,7 @@ public class seatViewDAO {
 			if(rs.next()) {
 				YN=rs.getString("seat_use");
 			}else {
-				System.out.println("데이터가 없습니다.");
+				YN="N";
 			}
 			
 			
@@ -92,6 +94,84 @@ public class seatViewDAO {
 		
 		return member_time;
 	}
+
+	public void InsertSeatData(String member_id, String seatInfoData, String member_time) {
+		//seat.member_id,member_time
+		String sql = "INSERT into seat values(?,'Y',?,?,default)";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, seatInfoData);
+			ps.setString(2, member_id);
+			ps.setString(3, member_time);
+			ps.executeQuery();
+			
+			System.out.println("입력완료");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public String selectEnter_timeInSeatTable(String member_id) {
+		String sql = "SELECT enter_time FROM seat WHERE member_id = ?";
+		String enter_Time ="";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, member_id);
+			rs=  ps.executeQuery();
+			if(rs.next()) {
+				enter_Time = rs.getString("enter_time");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return enter_Time;
+		
+	}
+	public int selectMemberTimeInMemberTable(String member_id) {
+		String sql = "SELECT member_time from member WHERE member_id = ?";
+		int member_Time =0;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, member_id);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				member_Time = rs.getInt("member_Time");
+			}
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("member_Time  : ? "+member_Time);
+		return member_Time;
+	}
+
+	public void Update_limit_time(String member_id) {
+		java.sql.Date Limit_Time =null;
+		String enter_time = selectEnter_timeInSeatTable(member_id); //현재시간
+		int member_Time = selectMemberTimeInMemberTable(member_id); //잔여시간
+		CommonService cser = new CommonService();
+		Limit_Time = cser.getLimit_Time(enter_time , member_Time);
+		String memberTime = ""; //member 테이블에서 가져온 잔여시간.
+		
+		String sql = "UPDATE member SET LIMIT_Time=? WHERE member_id =?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setDate(1, Limit_Time);
+			ps.setString(2, member_id);
+			ps.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	
 	
 	
 }

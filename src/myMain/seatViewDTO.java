@@ -6,6 +6,7 @@ public class seatViewDTO {
 	private String seat_use;
 	private String member_id;
 	private String member_time;
+	
 	public String getMember_time() {
 		return member_time;
 	}

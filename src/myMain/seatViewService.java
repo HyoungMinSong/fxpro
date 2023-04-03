@@ -3,17 +3,20 @@ package myMain;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import seatView.seatViewDAO;
-import seatView.seatViewDTO;
+import myMain.seatViewDAO;
+import myMain.seatViewDTO;
 
 public class seatViewService {
 	private seatViewDAO dao;
 	private String seatInfoData;
+	private timeCalc tcl = new timeCalc();
+
 	
 	public seatViewService() {
 		seatViewDAO dao = new seatViewDAO();
@@ -35,8 +38,9 @@ public class seatViewService {
 		
 		return fxId;
 	}
-	public void startSeat(Parent seatView,String member_id) {
-		//
+	
+	public void startSeat(Parent seatView, String member_id) {
+		
 		ArrayList<seatViewDTO> dataList = selectUseSeat(); //사용중인 좌석을 가져와서
 		for(int i = 1 ; i <25;i++) {
 			String seat = "#s"+i;
@@ -45,7 +49,7 @@ public class seatViewService {
 			btn.setPrefSize(70, 70);
 		}
 		
-		for(seatViewDTO data : dataList) {
+		for(seatViewDTO data : dataList) {//////Orange//////
 			//사용중이지 않은 데이터를 가져와야함.
 			String seatName = data.getSeat_num();
 			String useSeat = "#"+seatName;
@@ -56,8 +60,13 @@ public class seatViewService {
 			btn2.setStyle("-fx-background-color:ORANGE;"+"-fx-border-color:BLACK");
 			btn2.setText(member_time+"분");
 			btn2.setPrefSize(70, 70);
-		//	btn2.setText();
-		}
+			
+			
+			
+			
+			
+			
+		}/////////////////////////////////////Orange//////
 		
 		TextField member_id_field = (TextField)seatView.lookup("#member_id_field");
 		TextField member_time_info = (TextField)seatView.lookup("#member_time_info");
@@ -100,7 +109,7 @@ public class seatViewService {
 		
 	}
 	
-	public void seatNext(Parent seatView) {
+	public void seatNext(Parent seatView) { //seatNext 버튼을 눌렀을때 
 		/*
 		TextField member_id_field = (TextField)seatView.lookup("#member_id_field");
 		TextField seatInfo = (TextField)seatView.lookup("seatInfo");
@@ -113,8 +122,6 @@ public class seatViewService {
 			alert.setHeaderText("알림");
 			alert.setContentText(contentText);
 			alert.show();
-			
-			
 		}else if(YN.equals("N")) {
 			/*
 			 opener 구현할 곳  
@@ -122,6 +129,13 @@ public class seatViewService {
 			 자리가 비었다면 해당 창이 실행 됨 
 			 */
 			
+			/////////////데이터 넘기기 및 입장시간 출력 ///////////////
+			TextField member_id_field = (TextField)seatView.lookup("#member_id_field");
+			String member_id = member_id_field.getText();
+			TextField member_time_field =(TextField)seatView.lookup("#member_time_info");
+			String member_time = member_time_field.getText();
+			dao.InsertSeatData(member_id, seatInfoData,member_time);
+			dao.Update_limit_time(member_id); //남은 시트 시간을 업데이트함.
 		}
 	}
 
