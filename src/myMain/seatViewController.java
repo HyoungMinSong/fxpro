@@ -34,7 +34,6 @@ public class seatViewController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		service = new seatViewService();
-		System.out.println("hi~");
 		
 	}
 	public void setSeatView(Parent seatView) {
