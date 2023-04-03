@@ -4,7 +4,14 @@ public class LockerDTO {
 	private String locker_num;
 	private String locker_use;
 	private String member_id;
+	private String locker_time;
 	
+	public String getLocker_time() {
+		return locker_time;
+	}
+	public void setLocker_time(String locker_time) {
+		this.locker_time = locker_time;
+	}
 	public String getLocker_num() {
 		return locker_num;
 	}

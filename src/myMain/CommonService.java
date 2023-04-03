@@ -9,6 +9,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 public class CommonService {
+	public CommonService() {
+		
+	}
 
 	public static void msg(String contentText) {
 		Alert alert = new Alert(AlertType.INFORMATION);
@@ -16,9 +19,7 @@ public class CommonService {
 		alert.setContentText(contentText);
 		alert.show();
 	}
-
-
-	public java.sql.Date getLimit_Time(String enter_Time, int member_Time) {
+	public java.sql.Date getLimit_Time(String enter_Time, int member_Time) { //최대 이용 가능 시간을 구하는 로직
 		 //enter_Time (23/03/31 13:14) / member_Time 100 // // member Time 을 일 , 시간 ,분으로 나눔.
 		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
@@ -61,5 +62,51 @@ public class CommonService {
 		System.out.println("연산시간 : " + date1); //Fri Mar 31 16:40:07 KST 2023
 		return date1;
 		
+	} //최대 이용 가능 시간을 구하는 로직
+	
+	public boolean before5Min(String member_id) {//최대이용시간 5분전인걸 구하는 로직.
+		//member 테이블에서 limit time을 가져와서 , 현재시간 vs limittime 비교.
+		seatViewDAO dao = new seatViewDAO();
+		String limit_Time = dao.getLimit_TimeForSpread(member_id); //저장되어 있는 최대이용시간을 불러옴.
+		System.out.println("limit Time(before5Min)  :" + limit_Time);
+		
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date limit_time1 = null;
+		Date now = new Date();
+			try {
+				limit_time1 = transFormat.parse(limit_Time);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		long diffMin = (limit_time1.getTime() - now.getTime()) / 60000;
+		System.out.println("diffMin (before5Min)  :" + diffMin);
+		
+		if(diffMin<5){
+			return true;
+		}
+		
+		return false;
+		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
