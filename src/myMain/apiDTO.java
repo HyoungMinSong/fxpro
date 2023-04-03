@@ -7,11 +7,18 @@ public class apiDTO {
 	private Date entrydate; // 구매일자
 	private String memberId;// 핸드폰번호
 	private int entryprice; // 입력 금액
-	private String memberTime;// 구매시간
+	private int memberTime;// 구매시간
 	private int price;// 결재 금액
 	private String buyby; // 결제종류
 	private String buyname; //상품명
+	private String ticketid; // 이용권일련번호
 	
+	public String getTicketid() {
+		return ticketid;
+	}
+	public void setTicketid(String ticketid) {
+		this.ticketid = ticketid;
+	}
 	public String getBuyname() {
 		return buyname;
 	}
@@ -58,12 +65,13 @@ public class apiDTO {
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
-	public String getMemberTime() {
+	public int getMemberTime() {
 		return memberTime;
 	}
-	public void setMemberTime(String memberTime) {
+	public void setMemberTime(int memberTime) {
 		this.memberTime = memberTime;
 	}
+	
 
 	
 	

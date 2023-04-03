@@ -26,15 +26,22 @@ public class apiService {
 		// 아이디 중복 검증
 		apiLoginDAO loginDao = new apiLoginDAO();
 		String dbId=loginDao.loginProc(api.getMemberId());
-		if(dbId != null) {
+		System.out.println(dbId);
+		System.out.println(api.getMemberTime());
+		if(dbId == null ) {
 			//회원가입 및 정보 등록
+			System.out.println("아이디 없음");
 			ApiDAO apiDao = new ApiDAO();
-			apiDao.apiProc(api);
-			
+			apiDao.buyInsert(api);
+			apiDao.memberInsert(api);
 		}else {
 			//정보 등록
-			
+			System.out.println("아이디 있음");
+			ApiDAO apiDao = new ApiDAO();
+			apiDao.buyInsert(api);
+			apiDao.memberTimeUD(api);
 		}
+		System.out.println(api.getMemberTime());
 		
 	}
 	
