@@ -199,7 +199,9 @@ public class Opener {
 			e.printStackTrace();
 		}
 		mAPIController mc = loader.getController();
+		mc.setOpener(this);
 		mc.dataProc(ticketId,hp,cardOrHyoun);
+		
 	
 		
 		Scene scene = new Scene(mAPIForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
@@ -223,6 +225,25 @@ public class Opener {
 	
 		
 		Scene scene = new Scene(exitForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+	public void weekTicketOpen() {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Wpay.fxml"));
+		
+		Parent WeekTicketOpenForm = null;
+		try {
+			WeekTicketOpenForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		WpayController wc = loader.getController();
+		wc.setOpener(this);
+		
+		Scene scene = new Scene(WeekTicketOpenForm);  
 		primaryStage.setTitle("자리 이동");
 		primaryStage.setScene(scene);
 		primaryStage.show();

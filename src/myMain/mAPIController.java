@@ -30,8 +30,14 @@ public class mAPIController implements Initializable {
 	private String hp;
 	private String cardOrHyoun;
 	public ApiTicketDTO apd;
+	private Opener opener;
 	
 	
+	
+	public void setOpener(Opener opener) {
+		this.opener = opener;
+	}
+
 	public String getHp() {
 		return hp;
 	}
@@ -102,12 +108,14 @@ public class mAPIController implements Initializable {
 //		
 		service.apiProc(api);
 		CommonService.msg("결제 되었습니다.");
+		opener.homeChangeOpen();
 		System.out.println("메인 화면으로 이동");
 	}
 	
 	// 취소 버튼
 	public void cancle() {
 		System.out.println("pay화면으로 이동");
+		opener.homeChangeOpen();
 	}
 
 }

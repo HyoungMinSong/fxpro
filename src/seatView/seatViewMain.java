@@ -1,5 +1,4 @@
 package seatView;
-//
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,7 +16,7 @@ public class seatViewMain extends Application{
 		/*
 		 Opener 화면 변경 처리는 아직 적용하지 않음. -0328 박승홍
 		 */
-		String member_id = "이박사";
+		String member_id = "01041133401";
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("seatView.fxml"));
 		Parent seatView = loader.load();
 		
@@ -34,3 +33,4 @@ public class seatViewMain extends Application{
 	}
 
 }
+
