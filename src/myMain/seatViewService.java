@@ -15,9 +15,8 @@ import myMain.seatViewDTO;
 public class seatViewService {
 	private seatViewDAO dao;
 	private String seatInfoData;
-	private timeCalc tcl = new timeCalc();
+	//private timeCalc tcl = new timeCalc();
 
-	
 	public seatViewService() {
 		seatViewDAO dao = new seatViewDAO();
 		this.dao = dao ;
@@ -55,14 +54,13 @@ public class seatViewService {
 			String useSeat = "#"+seatName;
 			String memberNum = data.getMember_id();
 			String member_time = data.getMember_time();
-			
+			System.out.println("시트뷰 서비스의 멤버타임" + member_time);
 			Button btn2 =(Button)seatView.lookup(useSeat);
 			btn2.setStyle("-fx-background-color:ORANGE;"+"-fx-border-color:BLACK");
 			btn2.setText(member_time+"분");
 			btn2.setPrefSize(70, 70);
 			
-			
-			
+			//member_time 으로 남은 시간을 구하는 로직.
 			
 			
 			
@@ -134,7 +132,7 @@ public class seatViewService {
 			String member_id = member_id_field.getText();
 			TextField member_time_field =(TextField)seatView.lookup("#member_time_info");
 			String member_time = member_time_field.getText();
-			dao.InsertSeatData(member_id, seatInfoData,member_time);
+			dao.InsertSeatData(member_id, seatInfoData);
 			dao.Update_limit_time(member_id); //남은 시트 시간을 업데이트함.
 		}
 	}

@@ -60,6 +60,7 @@ public class LoginController implements Initializable{
 	
 	public void seatCheckOut() {
 		System.out.println("퇴실하기 씬 넣기");
+		opener.exitSeatOpen();
 	}
 	
 	public void enter() { //입장하기 정기권사용 버튼

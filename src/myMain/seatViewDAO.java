@@ -95,14 +95,14 @@ public class seatViewDAO {
 		return member_time;
 	}
 
-	public void InsertSeatData(String member_id, String seatInfoData, String member_time) {
+	public void InsertSeatData(String member_id, String seatInfoData) {
 		//seat.member_id,member_time
-		String sql = "INSERT into seat values(?,'Y',?,?,default)";
+		String sql = "INSERT into seat values(?,'Y',?,default)";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, seatInfoData);
 			ps.setString(2, member_id);
-			ps.setString(3, member_time);
+			//ps.setString(3, member_time);
 			ps.executeQuery();
 			
 			System.out.println("입력완료");

@@ -208,6 +208,26 @@ public class Opener {
 		primaryStage.show();
 	}
 
+	public void exitSeatOpen() {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("ExitForm.fxml"));
+		
+		Parent exitForm = null;
+		try {
+			exitForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+//		mAPIController mc = loader.getController();
+//		mc.dataProc(ticketId,hp,cardOrHyoun);
+	
+		
+		Scene scene = new Scene(exitForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
 
 
 			

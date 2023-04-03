@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myMain.ExitController">
+   <center>
+      <VBox maxHeight="500.0" prefHeight="500.0" prefWidth="650.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#Exit1" prefHeight="100.0" prefWidth="100.0" text="1">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#Exit2" prefHeight="100.0" prefWidth="100.0" text="2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exit3" mnemonicParsing="false" onAction="#Exit3" prefHeight="100.0" prefWidth="100.0" text="3">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+               <children>
+                  <Button fx:id="exit4" mnemonicParsing="false" onAction="#Exit4" prefHeight="100.0" prefWidth="100.0" text="4">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exit5" mnemonicParsing="false" onAction="#Exit5" prefHeight="100.0" prefWidth="100.0" text="5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exit6" mnemonicParsing="false" onAction="#Exit6" prefHeight="100.0" prefWidth="100.0" text="6">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+               <children>
+                  <Button fx:id="exit7" mnemonicParsing="false" onAction="#Exit7" prefHeight="100.0" prefWidth="100.0" text="7">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exit8" mnemonicParsing="false" onAction="#Exit8" prefHeight="100.0" prefWidth="100.0" text="8">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exit9" mnemonicParsing="false" onAction="#Exit9" prefHeight="100.0" prefWidth="100.0" text="9">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+               <children>
+                  <Button fx:id="exit0" mnemonicParsing="false" onAction="#Exit0" prefHeight="100.0" prefWidth="100.0" text="0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <VBox prefHeight="243.0" prefWidth="650.0" BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane alignment="CENTER" prefHeight="90.0" prefWidth="650.0">
+               <children>
+                  <TextField fx:id="hpNumber" alignment="CENTER" prefHeight="58.0" prefWidth="374.0" text="010">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" prefHeight="146.0" prefWidth="650.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#exitCheck" prefHeight="52.0" prefWidth="375.0" text="퇴실 확인">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <FlowPane.margin>
+                        <Insets bottom="20.0" />
+                     </FlowPane.margin>
+                  </Button>
+               </children>
+            </FlowPane>
+         </children>
+      </VBox>
+   </bottom>
+   <top>
+      <FlowPane alignment="CENTER" prefHeight="134.0" prefWidth="650.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="퇴  실">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </FlowPane>
+   </top>
+</BorderPane>
