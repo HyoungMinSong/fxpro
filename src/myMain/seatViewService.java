@@ -52,6 +52,7 @@ public class seatViewService {
 			String seatName = data.getSeat_num();
 			String useSeat = "#"+seatName;
 			String memberNum = data.getMember_id();
+
 			String member_time = data.getMember_time(); //잔여시간
 			System.out.println("seatName :" + seatName +" memberNum : "+ memberNum + " member_time : "+ member_time);
 			Button btn2 =(Button)seatView.lookup(useSeat);
@@ -66,6 +67,7 @@ public class seatViewService {
 				btn2.setStyle("-fx-background-color:RED;"+"-fx-border-color:BLACK");
 				btn2.setPrefSize(70, 70);
 			}
+
 			
 		}/////////////////////////////////////Orange//////
 		
@@ -146,6 +148,7 @@ public class seatViewService {
 			TextField member_time_field =(TextField)seatView.lookup("#member_time_info");
 			String member_time = member_time_field.getText();
 			System.out.println("seatinfoData 는seatNext메소드에서 ? " +  seatInfoData);
+
 			dao.InsertSeatData(member_id, seatInfoData);
 			dao.Update_limit_time(member_id); //남은 시트 시간을 업데이트함.
 		}

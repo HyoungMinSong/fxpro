@@ -1,15 +1,16 @@
 package myMain;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
+import myMain.CommonService;
+import myMain.Opener;
 
-public class payController implements Initializable {
+public class WpayController implements Initializable {
 	@FXML
 	ToggleButton button1;
 	@FXML
@@ -23,25 +24,22 @@ public class payController implements Initializable {
 	@FXML
 	ToggleButton button6;
 	@FXML
+	ToggleButton button7;
+	@FXML
 	TextField memberId;
 
-	private payService service;
 	private Opener opener;
 	
-
 	public void setOpener(Opener opener) {
 		this.opener = opener;
 	}
-
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		service = new payService();
-		memberId.setText("010");
 		memberId.textProperty().addListener((a, before, after) -> {
 			String result = idLengthCheck(after);
 			memberId.setText(result);
-			
 		});
+
 	}
 
 	// 아이디 길이 "010"빼고 8자리
@@ -63,18 +61,20 @@ public class payController implements Initializable {
 
 	      // 시간 = 분단위
 	      if (button1.isSelected()) {
-	         opener.mApiOpen("D2", memberId.getText(), "cash");
+	         opener.mApiOpen("W1", memberId.getText(), "cash");
 	      } else if (button2.isSelected()) {
-	         opener.mApiOpen("D3", memberId.getText(), "cash");
+	         opener.mApiOpen("W2", memberId.getText(), "cash");
 	      } else if (button3.isSelected()) {
-	         opener.mApiOpen("D4", memberId.getText(), "cash");
+	         opener.mApiOpen("W4", memberId.getText(), "cash");
 	      } else if (button4.isSelected()) {
-	         opener.mApiOpen("D6", memberId.getText(), "cash");
+	         opener.mApiOpen("W30", memberId.getText(), "cash");
 	      } else if (button5.isSelected()) {
-	         opener.mApiOpen("D9", memberId.getText(), "cash");
+	         opener.mApiOpen("W50", memberId.getText(), "cash");
 	      } else if (button6.isSelected()) {
-	         opener.mApiOpen("D12", memberId.getText(), "cash");
-	      } else {
+	         opener.mApiOpen("W100", memberId.getText(), "cash");
+	      } else if (button7.isSelected()) {
+		     opener.mApiOpen("W200", memberId.getText(), "cash");
+		  } else {
 	         CommonService.msg("상품을 선택해주세요.");
 	         return;
 	      }
@@ -92,17 +92,19 @@ public class payController implements Initializable {
 
 	      // 시간 = 분단위
 	      if (button1.isSelected()) {
-	         opener.mApiOpen("D2", memberId.getText(), "card");
+	         opener.mApiOpen("W1", memberId.getText(), "card");
 	      } else if (button2.isSelected()) {
-	         opener.mApiOpen("D3", memberId.getText(), "card");
+	         opener.mApiOpen("W2", memberId.getText(), "card");
 	      } else if (button3.isSelected()) {
-	         opener.mApiOpen("D4", memberId.getText(), "card");
+	         opener.mApiOpen("W4", memberId.getText(), "card");
 	      } else if (button4.isSelected()) {
-	         opener.mApiOpen("D6", memberId.getText(), "card");
+	         opener.mApiOpen("W30", memberId.getText(), "card");
 	      } else if (button5.isSelected()) {
-	         opener.mApiOpen("D9", memberId.getText(), "card");
+	         opener.mApiOpen("W50", memberId.getText(), "card");
 	      } else if (button6.isSelected()) {
-	         opener.mApiOpen("D12", memberId.getText(), "card");
+	         opener.mApiOpen("W100", memberId.getText(), "card");
+	      } else if (button7.isSelected()) {
+			 opener.mApiOpen("W200", memberId.getText(), "cash");
 	      } else {
 	         CommonService.msg("상품을 선택해주세요.");
 	         return;
@@ -110,21 +112,10 @@ public class payController implements Initializable {
 
 	      System.out.println("카드 결제창 이동");
 	   }
-	
-	
-//	public void dtoTest(ArrayList<PayTodayDTO> list) {
-//		for(PayTodayDTO dto : list) {
-//			System.out.println(dto.getId());
-//			System.out.println(dto.getName());
-//			System.out.println(dto.getPrice());
-//			System.out.println(dto.getValue());
-//		}
-//	}
 
 	// 회원 화면에서 취소 버튼
 	public void payCancelProc() {
 		opener.homeChangeOpen();
 	}
-
 
 }

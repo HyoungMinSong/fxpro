@@ -2,6 +2,7 @@ package myMain;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -25,6 +26,7 @@ public class LoginController implements Initializable{
 	private LoginService service;
 	private Stage primaryStage;
 	private Opener opener;
+//	private payService pService;
 	
 	
 
@@ -58,6 +60,7 @@ public class LoginController implements Initializable{
 	
 	public void seatCheckOut() {
 		System.out.println("퇴실하기 씬 넣기");
+		opener.exitSeatOpen();
 	}
 	
 	public void enter() { //입장하기 정기권사용 버튼
@@ -86,5 +89,6 @@ public class LoginController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		service = new LoginService();
+//		pService = new payService();
 	}
 }

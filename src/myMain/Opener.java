@@ -1,6 +1,7 @@
 package myMain;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -182,6 +183,46 @@ public class Opener {
 		lc.startLocker();
 		
 		Scene scene = new Scene(lockerViewForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+	public void mApiOpen(String ticketId, String hp, String cardOrHyoun) {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("memberAPI.fxml"));
+		
+		Parent mAPIForm = null;
+		try {
+			mAPIForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		mAPIController mc = loader.getController();
+		mc.dataProc(ticketId,hp,cardOrHyoun);
+	
+		
+		Scene scene = new Scene(mAPIForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+	public void exitSeatOpen() {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("ExitForm.fxml"));
+		
+		Parent exitForm = null;
+		try {
+			exitForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+//		mAPIController mc = loader.getController();
+//		mc.dataProc(ticketId,hp,cardOrHyoun);
+	
+		
+		Scene scene = new Scene(exitForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
 		primaryStage.setTitle("자리 이동");
 		primaryStage.setScene(scene);
 		primaryStage.show();
