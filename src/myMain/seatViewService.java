@@ -15,9 +15,8 @@ import myMain.seatViewDTO;
 public class seatViewService {
 	private seatViewDAO dao;
 	private String seatInfoData;
-	private timeCalc tcl = new timeCalc();
+	//private timeCalc tcl = new timeCalc();
 
-	
 	public seatViewService() {
 		seatViewDAO dao = new seatViewDAO();
 		this.dao = dao ;
@@ -40,7 +39,6 @@ public class seatViewService {
 	}
 	
 	public void startSeat(Parent seatView, String member_id) {
-		
 		ArrayList<seatViewDTO> dataList = selectUseSeat(); //사용중인 좌석을 가져와서
 		for(int i = 1 ; i <25;i++) {
 			String seat = "#s"+i;
@@ -54,17 +52,20 @@ public class seatViewService {
 			String seatName = data.getSeat_num();
 			String useSeat = "#"+seatName;
 			String memberNum = data.getMember_id();
-			String member_time = data.getMember_time();
-			
+			String member_time = data.getMember_time(); //잔여시간
+			System.out.println("seatName :" + seatName +" memberNum : "+ memberNum + " member_time : "+ member_time);
 			Button btn2 =(Button)seatView.lookup(useSeat);
 			btn2.setStyle("-fx-background-color:ORANGE;"+"-fx-border-color:BLACK");
 			btn2.setText(member_time+"분");
 			btn2.setPrefSize(70, 70);
 			
-			
-			
-			
-			
+			//member_time 으로 남은 시간을 구하는 로직.
+			CommonService cser = new CommonService();
+			boolean flag = cser.before5Min(memberNum); //5분남았는지 아닌지 판별함.
+			if(flag==true) {
+				btn2.setStyle("-fx-background-color:RED;"+"-fx-border-color:BLACK");
+				btn2.setPrefSize(70, 70);
+			}
 			
 		}/////////////////////////////////////Orange//////
 		
@@ -73,7 +74,7 @@ public class seatViewService {
 		member_id_field.setText(member_id);
 		
 		String member_time =dao.getMember_time(member_id);
-		System.out.println(member_time);
+		System.out.println("여긴가 ? " + member_time);
 		member_time_info.setText(member_time);
 	}//startSeat
 
@@ -89,10 +90,19 @@ public class seatViewService {
 		for(seatViewDTO data : dataList) {
 			//사용중이지 않은 데이터를 가져와야함.
 			String useSeat = "#"+data.getSeat_num();
-			System.out.println("useSeat 는 ? " + useSeat);
+			String member_id = data.getMember_id();
+			String member_time = data.getMember_time();
 			Button btn2 =(Button)seatView.lookup(useSeat);
 			btn2.setStyle("-fx-background-color:ORANGE;"+"-fx-border-color:BLACK");
 			btn2.setPrefSize(70, 70);
+			CommonService cser = new CommonService();
+			
+			boolean flag = cser.before5Min(member_id); //5분남았는지 아닌지 판별함.
+			if(flag==true) {
+				btn2.setStyle("-fx-background-color:RED;"+"-fx-border-color:BLACK");
+				btn2.setText(member_time+"분");
+				btn2.setPrefSize(70, 70);
+			}
 		}
 		
 		String ButtonfxId = idExtract(e);
@@ -106,6 +116,7 @@ public class seatViewService {
 		
 		//////
 		this.seatInfoData = ButtonfxId;
+		System.out.println("seatinfoData 는 ? " +  seatInfoData);
 		
 	}
 	
@@ -134,7 +145,8 @@ public class seatViewService {
 			String member_id = member_id_field.getText();
 			TextField member_time_field =(TextField)seatView.lookup("#member_time_info");
 			String member_time = member_time_field.getText();
-			dao.InsertSeatData(member_id, seatInfoData,member_time);
+			System.out.println("seatinfoData 는seatNext메소드에서 ? " +  seatInfoData);
+			dao.InsertSeatData(member_id, seatInfoData);
 			dao.Update_limit_time(member_id); //남은 시트 시간을 업데이트함.
 		}
 	}

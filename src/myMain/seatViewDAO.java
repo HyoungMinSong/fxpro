@@ -29,7 +29,7 @@ public class seatViewDAO {
 	}
 	
 	public ArrayList<seatViewDTO> selectUseSeat() {//사용중인 좌석정보를 가져오기.
-		String sql = "SELECT seat_num, seat_use, seat.member_id, member.member_time FROM seat,member WHERE seat_use=?";  //
+		String sql = "SELECT seat_num, seat_use,seat.member_id, member.member_time FROM seat join member on member.member_id = seat.member_id WHERE seat_use=?";  //
 		ArrayList<seatViewDTO> dataList = new ArrayList<>();
 		
 		try {
@@ -95,14 +95,14 @@ public class seatViewDAO {
 		return member_time;
 	}
 
-	public void InsertSeatData(String member_id, String seatInfoData, String member_time) {
+	public void InsertSeatData(String member_id, String seatInfoData) {
 		//seat.member_id,member_time
-		String sql = "INSERT into seat values(?,'Y',?,?,default)";
+		String sql = "INSERT into seat values(?,'Y',?,default)";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, seatInfoData);
 			ps.setString(2, member_id);
-			ps.setString(3, member_time);
+			//ps.setString(3, member_time);
 			ps.executeQuery();
 			
 			System.out.println("입력완료");
@@ -169,6 +169,25 @@ public class seatViewDAO {
 			e.printStackTrace();
 		}
 		
+	}
+
+	public String getLimit_TimeForSpread(String member_id) {
+		String sql = "SELECT limit_time FROM member WHERE member_id = ?";
+		String limit_Time="";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, member_id);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				limit_Time = rs.getString("limit_Time");
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return limit_Time;
 	}
 
 	
