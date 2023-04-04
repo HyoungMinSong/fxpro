@@ -39,7 +39,7 @@ public class seatViewService {
    }
    
    public void startSeat(Parent seatView, String member_id, Opener opener2) {
-	   this.opener2 = opener2;
+      this.opener2 = opener2;
       ArrayList<seatViewDTO> dataList = selectUseSeat(); //사용중인 좌석을 가져와서
       for(int i = 1 ; i <25;i++) {
          String seat = "#s"+i;
@@ -109,13 +109,13 @@ public class seatViewService {
             btn2.setStyle("-fx-background-color:RED;"+"-fx-border-color:BLACK");
             btn2.setPrefSize(70, 70);
          }else if(colorCode.equals("-1")) {
-        	String btnName = cmDTO.getSeat_Num();
-        	btnName= "#"+btnName;
+           String btnName = cmDTO.getSeat_Num();
+           btnName= "#"+btnName;
             Button btn3 = (Button)seatView.lookup(btnName);
             btnName= btnName.replace("#s", "");
             System.out.println("btnName : ? " + btnName);
-        	btn3.setText(btnName);
-        	btn3.setStyle("-fx-background-color:#D3D3D3;"+"-fx-border-color:BLACK");
+           btn3.setText(btnName);
+           btn3.setStyle("-fx-background-color:#D3D3D3;"+"-fx-border-color:BLACK");
          }
       }
       
@@ -146,9 +146,9 @@ public class seatViewService {
          alert.setContentText(contentText);
          alert.show();
       }else if(YN.equals("N")) {
-    	 Alert at = new Alert(AlertType.INFORMATION);
-  		 at.setHeaderText("입장완료");
-  		 at.setContentText("입장완료 되었습니다");
+        Alert at = new Alert(AlertType.INFORMATION);
+         at.setHeaderText("입장완료");
+         at.setContentText("입장완료 되었습니다");
         
          /////////////데이터 넘기기 및 입장시간 출력 ///////////////
          TextField member_id_field = (TextField)seatView.lookup("#member_id_field");
@@ -168,7 +168,6 @@ public class seatViewService {
    }
 
 }
-
 
 
 

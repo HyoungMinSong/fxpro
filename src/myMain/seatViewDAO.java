@@ -16,7 +16,7 @@ public class seatViewDAO {
    
    public seatViewDAO() {
       
-      String url = "jdbc:oracle:thin:@localhost:1522:xe";
+      String url = "jdbc:oracle:thin:@localhost:1521:xe";
       String username = "douzone";
       String password = "oracle";
 
@@ -191,17 +191,17 @@ public class seatViewDAO {
    }
 
 public void InsertIntoAccessTable(String member_id) {
-	String sql = "insert into access_table values(seq_access.nextVAL,'입실',CURRENT_TIMESTAMP,?)";
-	try {
-		ps = con.prepareStatement(sql);
-		ps.setString(1, member_id);
-		ps.executeQuery();
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	
-	
+   String sql = "insert into access_table values(seq_access.nextVAL,'입실',CURRENT_TIMESTAMP,?)";
+   try {
+      ps = con.prepareStatement(sql);
+      ps.setString(1, member_id);
+      ps.executeQuery();
+   } catch (SQLException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+   }
+   
+   
 }
 
    

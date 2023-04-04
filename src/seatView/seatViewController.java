@@ -47,14 +47,15 @@ public class seatViewController implements Initializable{
 		service.buttonSelect(e,seatView);
 		
 	}
+	// next>버튼을 눌렀을때 작업
+	public void seatNext() {
+		service.seatNext(seatView);
+	}
 	
+	//
 	
-	
-	
-	
-           
-   
 	
 	
 
-}
+}//seatViewController
+

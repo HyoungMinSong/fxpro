@@ -22,6 +22,7 @@ public class CommonService {
    public java.sql.Date getLimit_Time(String enter_Time, int member_Time) { //최대 이용 가능 시간을 구하는 로직
        //enter_Time (23/03/31 13:14) / member_Time 100 // // member Time 을 일 , 시간 ,분으로 나눔.
       SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+      
       Date date = null;
       try {
          date = transFormat.parse(enter_Time);
@@ -57,12 +58,12 @@ public class CommonService {
        * SimpleDateFormat transFormatToSql = new
        * SimpleDateFormat("yy-MM-dd HH:mm:ss"); transFormatToSql.format(date1);
        */
-      
-      System.out.println("커먼 서비스 연산시간 : " + date1); //Fri Mar 31 16:40:07 KST 2023
+     
       return date1;
       
    } //최대 이용 가능 시간을 구하는 로직
    
+
    public CommonDTO before5Min(String member_id) {//최대이용시간 5분전인걸 구하는 로직.
       //member 테이블에서 limit time을 가져와서 , 현재시간 vs limittime 비교.
       seatViewDAO dao = new seatViewDAO();
@@ -95,21 +96,4 @@ public class CommonService {
       return cmDTO;
    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

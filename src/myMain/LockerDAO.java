@@ -15,7 +15,7 @@ public class LockerDAO {
 	private ResultSet rs;
 	
 	public LockerDAO() {
-		String url = "jdbc:oracle:thin:@localhost:1522:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String username = "douzone";
 		String password = "oracle";
 
@@ -51,6 +51,25 @@ public class LockerDAO {
 			e.printStackTrace();
 		}
 		return dataList;
+	}
+
+	public boolean checkLocker(String btnId) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM locker where locker_num = ?";	
+
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, btnId);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return true;
 	}
 		
 	}
