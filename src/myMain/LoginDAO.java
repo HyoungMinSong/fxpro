@@ -54,6 +54,7 @@ public class LoginDAO {
 			e.printStackTrace();
 		}
 		return true;
+		//체크
 	}
 }
 
