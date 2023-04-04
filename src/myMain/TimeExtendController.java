@@ -36,10 +36,11 @@ public class TimeExtendController implements Initializable{
 	
 	public void lockerTicketExtend() {
 		System.out.println("사물함 이용권 연장 씬 넣기");
+		opener.lockerExtendOpen();
 	}
 	
 	public void prevBtn() {
-		System.out.println("사물함 이용권 연장 씬 넣기");
+		System.out.println("이전으로");
 		opener.homeChangeOpen();
 	}
 	

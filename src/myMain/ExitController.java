@@ -91,6 +91,7 @@ public class ExitController implements Initializable{
 			if (service.updateMember(a,member_id) != 0) {
 				
 				service.exitCheck(member_id);
+				service.accessInsert(member_id);
 				at.setContentText("퇴실 완료!");
 			} else {
 				at.setContentText("업데이트 실패");

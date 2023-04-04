@@ -179,8 +179,10 @@ public class Opener {
 		}
 		LockerController lc = loader.getController();
 		
+		lc.setOpener(this);
 		lc.setLockerForm(lockerViewForm);
 		lc.startLocker();
+		
 		
 		Scene scene = new Scene(lockerViewForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
 		primaryStage.setTitle("자리 이동");
@@ -249,7 +251,66 @@ public class Opener {
 		primaryStage.show();
 	}
 
+	public void lockerExtendOpen() {
+		// TODO Auto-generated method stub
+//		FXMLLoader loader = new FXMLLoader(getClass().getResource("Lpay.fxml"));
+//		
+//		Parent lockerExtendOpenForm = null;
+//		try {
+//			lockerExtendOpenForm = loader.load();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		WpayController wc = loader.getController();
+//		wc.setOpener(this);
+//		
+//		Scene scene = new Scene(lockerExtendOpenForm);  
+//		primaryStage.setTitle("자리 이동");
+//		primaryStage.setScene(scene);
+//		primaryStage.show();
+	}
 
+	public void LPayOPen(String btnId) {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Lpay.fxml"));
+		
+		Parent lockerPayOpenForm = null;
+		try {
+			lockerPayOpenForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		LpayController lc = loader.getController();
+		lc.setOpener(this);
+		lc.setLockerNum(btnId);
+		
+		Scene scene = new Scene(lockerPayOpenForm);  
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+	public void lApiOpen(String ticketId, String hp, String cardOrHyoun,String lockerNum) {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("LockerAPI.fxml"));
+		
+		Parent lAPIForm = null;
+		try {
+			lAPIForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		LAPIController lc = loader.getController();
+		lc.setOpener(this);
+		lc.dataProc(ticketId,hp,cardOrHyoun,lockerNum);
+		
+	
+		
+		Scene scene = new Scene(lAPIForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
 
 			
 }

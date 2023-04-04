@@ -118,6 +118,20 @@ public class ExitDAO {
 			
 			return seatUse;
 		}
+
+		public void accessInsert(String member_id) {
+			// TODO Auto-generated method stub
+			String sql = "insert into access_table values(seq_access.nextVAL,'퇴실',CURRENT_TIMESTAMP,?)";
+			PreparedStatement ps = null;
+			int a = 0;
+			try {
+				ps = con.prepareStatement(sql);
+				ps.setString(1, member_id);
+				ps.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 

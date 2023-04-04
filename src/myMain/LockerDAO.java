@@ -28,9 +28,9 @@ public class LockerDAO {
 	}
 	
 	public ArrayList<LockerDTO> selectUseLocker() { //사용중인 사물함 정보를 가져오기.
-		String sql = "SELECT * FROM locker WHERE locker_use=?";		
-		
-		
+		//SELECT seat_num, seat_use,seat.member_id, member.member_time FROM 
+		//seat join member on member.member_id = seat.member_id WHERE seat_use=?
+		String sql = "SELECT * FROM locker join member on locker.member_id = member.member_id WHERE locker_use=?";	
 		ArrayList<LockerDTO> dataList = new ArrayList<>();
 
 		try {
@@ -42,6 +42,8 @@ public class LockerDAO {
 				LockerDTO data = new LockerDTO();
 				data.setMember_id(rs.getString("member_id"));
 				data.setLocker_num(rs.getString("locker_num"));
+				data.setLocker_time(rs.getString("locker_time"));
+				
 				dataList.add(data);
 			}
 		} catch (SQLException e) {
@@ -49,6 +51,25 @@ public class LockerDAO {
 			e.printStackTrace();
 		}
 		return dataList;
+	}
+
+	public boolean checkLocker(String btnId) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM locker where locker_num = ?";	
+
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, btnId);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return true;
 	}
 		
 	}

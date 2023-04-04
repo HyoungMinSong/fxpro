@@ -29,7 +29,12 @@ public class LpayController implements Initializable {
 	TextField memberId;
 
 	private Opener opener;
+	private String lockerNum;
 	
+	
+	public void setLockerNum(String lockerNum) {
+		this.lockerNum = lockerNum;
+	}
 	public void setOpener(Opener opener) {
 		this.opener = opener;
 	}
@@ -61,19 +66,19 @@ public class LpayController implements Initializable {
 
 	      // 시간 = 분단위
 	      if (button1.isSelected()) {
-	         opener.mApiOpen("L1", memberId.getText(), "cash");
+	         opener.lApiOpen("L1", memberId.getText(), "cash",lockerNum);
 	      } else if (button2.isSelected()) {
-	         opener.mApiOpen("L2", memberId.getText(), "cash");
+	         opener.lApiOpen("L2", memberId.getText(), "cash",lockerNum);
 	      } else if (button3.isSelected()) {
-	         opener.mApiOpen("L4", memberId.getText(), "cash");
+	         opener.lApiOpen("L4", memberId.getText(), "cash",lockerNum);
 	      } else if (button4.isSelected()) {
-	         opener.mApiOpen("L30", memberId.getText(), "cash");
+	         opener.lApiOpen("L30", memberId.getText(), "cash",lockerNum);
 	      } else if (button5.isSelected()) {
-	         opener.mApiOpen("L50", memberId.getText(), "cash");
+	         opener.lApiOpen("L50", memberId.getText(), "cash",lockerNum);
 	      } else if (button6.isSelected()) {
-	         opener.mApiOpen("L100", memberId.getText(), "cash");
+	         opener.lApiOpen("L100", memberId.getText(), "cash",lockerNum);
 	      } else if (button7.isSelected()) {
-		     opener.mApiOpen("L200", memberId.getText(), "cash");
+		     opener.lApiOpen("L200", memberId.getText(), "cash",lockerNum);
 		  } else {
 	         CommonService.msg("상품을 선택해주세요.");
 	         return;
@@ -92,19 +97,19 @@ public class LpayController implements Initializable {
 
 	      // 시간 = 분단위
 	      if (button1.isSelected()) {
-	         opener.mApiOpen("L1", memberId.getText(), "card");
+	         opener.lApiOpen("L1", memberId.getText(), "card",lockerNum);
 	      } else if (button2.isSelected()) {
-	         opener.mApiOpen("L2", memberId.getText(), "card");
+	         opener.lApiOpen("L2", memberId.getText(), "card",lockerNum);
 	      } else if (button3.isSelected()) {
-	         opener.mApiOpen("L4", memberId.getText(), "card");
+	         opener.lApiOpen("L4", memberId.getText(), "card",lockerNum);
 	      } else if (button4.isSelected()) {
-	         opener.mApiOpen("L30", memberId.getText(), "card");
+	         opener.lApiOpen("L30", memberId.getText(), "card",lockerNum);
 	      } else if (button5.isSelected()) {
-	         opener.mApiOpen("L50", memberId.getText(), "card");
+	         opener.lApiOpen("L50", memberId.getText(), "card",lockerNum);
 	      } else if (button6.isSelected()) {
-	         opener.mApiOpen("L100", memberId.getText(), "card");
+	         opener.lApiOpen("L100", memberId.getText(), "card",lockerNum);
 	      } else if (button7.isSelected()) {
-			 opener.mApiOpen("L200", memberId.getText(), "cash");
+			 opener.lApiOpen("L200", memberId.getText(), "cash",lockerNum);
 	      } else {
 	         CommonService.msg("상품을 선택해주세요.");
 	         return;

@@ -20,24 +20,24 @@ public class LockerService {
 	}
 	
 	public void startLocker(Parent locker) {
-	ArrayList<LockerDTO> dataList = selectUseLocker();// 사용중인 사물함을 가져옴
-	for(int i = 1 ; i < 21;i++) {
-		String lock = "#lock"+i;
-		Button btn =(Button)locker.lookup(lock);
-		btn.setStyle("-fx-background-color:#D3D3D3;"+"-fx-border-color:BLACK");
-	
-	}
-	for(LockerDTO data : dataList) {
-		//사용중이지 않은 데이터를 가져와야함.
-		String useLocker = "#lock"+data.getLocker_num();
-		System.out.println("useLocker 는 ? " + useLocker);
-		Button btn2 =(Button)locker.lookup(useLocker);
-		btn2.setStyle("-fx-background-color:ORANGE;"+"-fx-border-color:BLACK");
-	}
-
+		for(int i = 1 ; i < 21;i++) {
+			String lock = "#lock"+i;
+			Button btn =(Button)locker.lookup(lock);
+			btn.setStyle("-fx-background-color:#D3D3D3;"+"-fx-border-color:BLACK");
 		
+		}
+		
+		ArrayList<LockerDTO> dataList = selectUseLocker();// 사용중인 사물함을 가져옴
+		for(LockerDTO data : dataList) {
+			String useLocker = "#lock"+data.getLocker_num();
+			String locker_time = data.getLocker_time();
+			System.out.println("useLocker 는 ? " + useLocker);
+			Button btn2 =(Button)locker.lookup(useLocker);
+			btn2.setStyle("-fx-background-color:ORANGE;"+"-fx-border-color:BLACK");
+			btn2.setText("남은시간 \n"+locker_time);
+		}
 	}
-	public void buttonSelect(ActionEvent e,Parent locker) {
+	public String buttonSelect(ActionEvent e,Parent locker) {
 		ArrayList<LockerDTO> dataList = selectUseLocker();//arrayList
 		for(int i = 1 ; i <21;i++) {
 			String lock = "#lock"+i;
@@ -48,18 +48,21 @@ public class LockerService {
 		for(LockerDTO data : dataList) {
 			//사용중이지 않은 데이터를 가져와야함.
 			String useLocker = "#lock"+data.getLocker_num();
+			String locker_time = data.getLocker_time();
 			System.out.println("useLocker 는 ? " + useLocker);
 			Button btn2 =(Button)locker.lookup(useLocker);
 			btn2.setStyle("-fx-background-color:ORANGE;"+"-fx-border-color:BLACK");
+			btn2.setText("남은시간 \n"+locker_time);
 		}
 		
 		String ButtonfxId = idExtract(e);
 		Button btn = (Button)locker.lookup(ButtonfxId);
 		btn.setStyle("-fx-background-color:BLUE;"+"-fx-border-color:BLACK");
+		return ButtonfxId;
 		
 		
 }
-	
+	//
 	//Fx:id 를 추출하는 메소드
 		public String idExtract(ActionEvent e) {
 			String idData = e.getSource().toString();
@@ -71,6 +74,11 @@ public class LockerService {
 			System.out.println("fx:id는 : " +fxId);
 			
 			return fxId;
+		}
+
+		public boolean checkLocker(String btnId) {
+			// TODO Auto-generated method stub
+			return dao.checkLocker(btnId);
 		}
 		
 		
