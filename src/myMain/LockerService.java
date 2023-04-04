@@ -37,7 +37,7 @@ public class LockerService {
 			btn2.setText("남은시간 \n"+locker_time);
 		}
 	}
-	public void buttonSelect(ActionEvent e,Parent locker) {
+	public String buttonSelect(ActionEvent e,Parent locker) {
 		ArrayList<LockerDTO> dataList = selectUseLocker();//arrayList
 		for(int i = 1 ; i <21;i++) {
 			String lock = "#lock"+i;
@@ -58,10 +58,11 @@ public class LockerService {
 		String ButtonfxId = idExtract(e);
 		Button btn = (Button)locker.lookup(ButtonfxId);
 		btn.setStyle("-fx-background-color:BLUE;"+"-fx-border-color:BLACK");
+		return ButtonfxId;
 		
 		
 }
-	
+	//
 	//Fx:id 를 추출하는 메소드
 		public String idExtract(ActionEvent e) {
 			String idData = e.getSource().toString();
@@ -73,6 +74,11 @@ public class LockerService {
 			System.out.println("fx:id는 : " +fxId);
 			
 			return fxId;
+		}
+
+		public boolean checkLocker(String btnId) {
+			// TODO Auto-generated method stub
+			return dao.checkLocker(btnId);
 		}
 		
 		

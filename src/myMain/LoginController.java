@@ -41,6 +41,7 @@ public class LoginController implements Initializable{
 	
 	public void seasonTicket() {
 		System.out.println("정기 이용권 씬 넣기");
+		opener.weekTicketOpen();
 	}
 	
 	public void lockerTicket() {

@@ -81,7 +81,7 @@ public class RegController implements Initializable{
 	
 	// 회원 화면에서 취소 버튼
 	public void regCancelProc() {
-		CommonService.windowsClose(RegForm);	//다른 곳에서도 편하게 사용하기 위해 스태틱 메소드를 만든  커먼서비스에서 호출하기.
+//		CommonService.windowsClose(RegForm);	//다른 곳에서도 편하게 사용하기 위해 스태틱 메소드를 만든  커먼서비스에서 호출하기.
 //		CommonService.windowsClose(stage); //스테이지만 넣어도 가능.
 	}
 

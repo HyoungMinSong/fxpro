@@ -86,8 +86,12 @@ public class ExitController implements Initializable{
 		at.setHeaderText("등록 정보");
 		if(result != null && result.equals("Y")) {
 			long min = service.getTime(member_id);
-			if (service.updateMember(min,member_id) != 0) {
+			String time = service.memberCheck(member_id);
+			long a = Long.parseLong(time)-min;
+			if (service.updateMember(a,member_id) != 0) {
+				
 				service.exitCheck(member_id);
+				service.accessInsert(member_id);
 				at.setContentText("퇴실 완료!");
 			} else {
 				at.setContentText("업데이트 실패");

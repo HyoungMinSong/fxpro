@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 
-public class mAPIController implements Initializable {
+public class LAPIController implements Initializable {
 	@FXML
 	Label entryDate;
 	@FXML
@@ -25,15 +25,26 @@ public class mAPIController implements Initializable {
 	Label exitTime;
 	@FXML
 	TextField entryPrice;
+	@FXML
+	Label lockerInt;
 	private payDTO paydto;
 	private apiService service;
 	private String hp;
 	private String cardOrHyoun;
 	public ApiTicketDTO apd;
 	private Opener opener;
+	private int lockerNum; 
 	
 	
 	
+	public int getLockerNum() {
+		return lockerNum;
+	}
+
+	public void setLockerNum(int lockerNum) {
+		this.lockerNum = lockerNum;
+	}
+
 	public void setOpener(Opener opener) {
 		this.opener = opener;
 	}
@@ -65,9 +76,12 @@ public class mAPIController implements Initializable {
 		entryTime.setText(formatter2.format(date));
 		
 		
+		
+		
 	}
 
-	public void dataProc(String ticketId, String hp, String cardOrHyoun) {
+	public void dataProc(String ticketId, String hp, String cardOrHyoun,String lockerNum) {
+		lockerInt.setText(lockerNum);
 		System.out.println("확인");
 		apd = service.ticketDAO(ticketId);
 		System.out.println(apd.getId());
@@ -79,6 +93,8 @@ public class mAPIController implements Initializable {
 		setHp(hp);
 		setCardOrHyoun(cardOrHyoun);
 		
+		setLockerNum(Integer.parseInt(lockerNum));
+		
 	}
 
 	//  확인 버튼
@@ -87,7 +103,7 @@ public class mAPIController implements Initializable {
 //		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 //		String a = formatter.format(new Date(System.currentTimeMillis()));
 //		date = formatter.parse(a);
-		apiDTO api = new apiDTO();
+		LapiDTO api = new LapiDTO();
 		if(entryPrice.getText().equals("")) {
 			CommonService.msg("금액을 입력해주세요.");
 			return;
@@ -105,8 +121,10 @@ public class mAPIController implements Initializable {
 		api.setEntryprice(Integer.parseInt(entryPrice.getText()));
 		api.setBuyby(getCardOrHyoun());
 		api.setTicketid(apd.getId());
+		api.setLockerNum(getLockerNum());
 //		
-		service.apiProc(api);
+		service.lApiProc(api);
+		
 		CommonService.msg("결제 되었습니다.");
 		opener.homeChangeOpen();
 		System.out.println("메인 화면으로 이동");
