@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myMain.adminSeatController">
+   <left>
+      <VBox prefHeight="658.0" prefWidth="208.0" spacing="55.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" text="좌석 &amp; 사물함 보기">
+               <font>
+                  <Font name="Hancom MalangMalang Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" text="매출 정보">
+               <font>
+                  <Font name="Hancom MalangMalang Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" text="출입 기록">
+               <font>
+                  <Font name="Hancom MalangMalang Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" text="블랙리스트 등록">
+               <font>
+                  <Font name="Hancom MalangMalang Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <top>
+      <FlowPane alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="1250.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="관리자 페이지">
+               <font>
+                  <Font name="Hancom MalangMalang Bold" size="47.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </FlowPane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" layoutX="25.0" layoutY="14.0" prefHeight="42.0" prefWidth="484.0" spacing="30.0">
+               <children>
+                  <Button fx:id="s1" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="1" />
+                  <Button fx:id="s2" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="2" />
+                  <Button fx:id="s3" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="3" />
+                  <Button fx:id="s4" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="4" />
+                  <Button fx:id="s5" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="5" />
+                  <Button fx:id="s6" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="6" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="25.0" layoutY="67.0" prefHeight="42.0" prefWidth="484.0" spacing="30.0">
+               <children>
+                  <Button fx:id="s7" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="7" />
+                  <Button fx:id="s8" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="8" />
+                  <Button fx:id="s9" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="9" />
+                  <Button fx:id="s10" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="10" />
+                  <Button fx:id="s11" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="11" />
+                  <Button fx:id="s12" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="12" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="25.0" layoutY="118.0" prefHeight="42.0" prefWidth="485.0" spacing="30.0">
+               <children>
+                  <Button fx:id="s13" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="13" />
+                  <Button fx:id="s14" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="14" />
+                  <Button fx:id="s15" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="15" />
+                  <Button fx:id="s16" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="16" />
+                  <Button fx:id="s17" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="17" />
+                  <Button fx:id="s18" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="18" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="25.0" layoutY="171.0" prefHeight="42.0" prefWidth="488.0" spacing="30.0">
+               <children>
+                  <Button fx:id="s19" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="19" />
+                  <Button fx:id="s20" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="20" />
+                  <Button fx:id="s21" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="21" />
+                  <Button fx:id="s22" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="22" />
+                  <Button fx:id="s23" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="23" />
+                  <Button fx:id="s24" mnemonicParsing="false" prefHeight="58.0" prefWidth="63.0" text="24" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

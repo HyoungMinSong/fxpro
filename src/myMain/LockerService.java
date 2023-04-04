@@ -61,7 +61,7 @@ public class LockerService {
 		
 		
 }
-	
+	//
 	//Fx:id 를 추출하는 메소드
 		public String idExtract(ActionEvent e) {
 			String idData = e.getSource().toString();

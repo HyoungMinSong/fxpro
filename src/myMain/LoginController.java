@@ -2,6 +2,7 @@ package myMain;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -25,6 +26,7 @@ public class LoginController implements Initializable{
 	private LoginService service;
 	private Stage primaryStage;
 	private Opener opener;
+//	private payService pService;
 	
 	
 
@@ -39,6 +41,7 @@ public class LoginController implements Initializable{
 	
 	public void seasonTicket() {
 		System.out.println("정기 이용권 씬 넣기");
+		opener.weekTicketOpen();
 	}
 	
 	public void lockerTicket() {
@@ -58,27 +61,31 @@ public class LoginController implements Initializable{
 	
 	public void seatCheckOut() {
 		System.out.println("퇴실하기 씬 넣기");
+		opener.exitSeatOpen();
 	}
 	
 	public void enter() { //입장하기 정기권사용 버튼
 		String id = hpNumber.getText();
-		System.out.println("테스트");
-		System.out.println(id);
-		LoginDTO dto = service.seatLoginCheck(id); // id를 가지고 회원정보와 이용권 시간이 남아있는지 확인.
+		boolean flag = service.seatUseCheck(id);
 		Alert at = new Alert(AlertType.INFORMATION);
 		at.setHeaderText("로그인 정보");
-		if (dto == null) {
-			at.setContentText("등록된 회원 정보가 없습니다.");
-		} else {
-			if(dto.getRemainTime() == 0) {
-				at.setContentText("남은 이용권 시간이 없습니다.");
-			} else {
-				at.setContentText("로그인 성공");
-				System.out.println("이용권 사용 씬 넣기");
-				opener.seatSelectOpen(id);
-			}
-		}
 		
+		if(flag==true) {
+			LoginDTO dto = service.seatLoginCheck(id); // id를 가지고 회원정보와 이용권 시간이 남아있는지 확인.
+			if (dto == null) {
+				at.setContentText("등록된 회원 정보가 없습니다.");
+			} else {
+				if(dto.getRemainTime() == 0) {
+					at.setContentText("남은 이용권 시간이 없습니다.");
+				} else {
+					at.setContentText("로그인 성공");
+					System.out.println("이용권 사용 씬 넣기");
+					opener.seatSelectOpen(id);
+				}
+			}
+		}else if(flag==false){
+			at.setContentText("이미 사용중인 회원입니다.");
+		}
 		at.show();
 	}
 
@@ -86,5 +93,6 @@ public class LoginController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		service = new LoginService();
+//		pService = new payService();
 	}
 }

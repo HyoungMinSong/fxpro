@@ -69,7 +69,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="hpNumber" onMouseClicked="#clearHpNumber" prefHeight="50.0" prefWidth="294.0" text="내용을 입력해주세요.">
+            <TextField fx:id="hpNumber" prefHeight="50.0" prefWidth="294.0" text="테ㅔㅌ테테">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
