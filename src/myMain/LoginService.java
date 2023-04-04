@@ -34,4 +34,9 @@ public class LoginService {
 		LoginDTO dto = dao.seatLoginCheck(id);	
 		return dto;
 	}
+
+	public boolean seatUseCheck(String id) {
+		
+		return dao.seatUseCheck(id);
+	}
 }

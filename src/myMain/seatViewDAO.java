@@ -20,7 +20,6 @@ public class seatViewDAO {
       String username = "douzone";
       String password = "oracle";
 
-
       try {
          Class.forName("oracle.jdbc.OracleDriver");
          con = DriverManager.getConnection(url, username, password);
@@ -51,7 +50,6 @@ public class seatViewDAO {
       }
       return dataList;
    }//selectUseSeat();
-
 
    
    public String checkSeatUse(String selectSeat) {
@@ -192,6 +190,19 @@ public class seatViewDAO {
       return limit_Time;
    }
 
+public void InsertIntoAccessTable(String member_id) {
+   String sql = "insert into access_table values(seq_access.nextVAL,'입실',CURRENT_TIMESTAMP,?)";
+   try {
+      ps = con.prepareStatement(sql);
+      ps.setString(1, member_id);
+      ps.executeQuery();
+   } catch (SQLException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+   }
+   
+   
+}
 
    
    

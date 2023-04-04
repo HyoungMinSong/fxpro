@@ -120,7 +120,7 @@ public class Opener {
 		seatViewController sv = loader.getController();
 		
 		sv.setSeatView(seatViewForm);
-		sv.startSeat(id);
+		sv.startSeat(id,this);
 		sv.setOpener(this);
 		
 		Scene scene = new Scene(seatViewForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
@@ -311,6 +311,25 @@ public class Opener {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
-
+  
+   public void seatMove(String member_id) {
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("seatMove.fxml"));
+      Parent seatMoveOpenForm = null;
+      try {
+         seatMoveOpenForm = loader.load();
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+      seatMoveController sm = loader.getController();
+      sm.setSeatMove(seatMoveOpenForm);
+      sm.setOpener(this);
+      sm.startSeat(member_id,this);
+      
+      
+      Scene scene = new Scene(seatMoveOpenForm);  
+      primaryStage.setTitle("자리 이동");
+      primaryStage.setScene(scene);
+      primaryStage.show();
+   }
 			
 }

@@ -58,18 +58,17 @@ public class CommonService {
        * SimpleDateFormat transFormatToSql = new
        * SimpleDateFormat("yy-MM-dd HH:mm:ss"); transFormatToSql.format(date1);
        */
-      
-      System.out.println("연산시간 : " + date1); //Fri Mar 31 16:40:07 KST 2023
+     
       return date1;
       
    } //최대 이용 가능 시간을 구하는 로직
    
-   public boolean before5Min(String member_id) {//최대이용시간 5분전인걸 구하는 로직.
+
+   public CommonDTO before5Min(String member_id) {//최대이용시간 5분전인걸 구하는 로직.
       //member 테이블에서 limit time을 가져와서 , 현재시간 vs limittime 비교.
       seatViewDAO dao = new seatViewDAO();
       String limit_Time = dao.getLimit_TimeForSpread(member_id); //저장되어 있는 최대이용시간을 불러옴.
       System.out.println("limit Time(before5Min)  :" + limit_Time);
-      
       SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
       Date limit_time1 = null;
       Date now = new Date();
@@ -81,16 +80,20 @@ public class CommonService {
          }
          
       long diffMin = (limit_time1.getTime() - now.getTime()) / 60000;
-      System.out.println("diffMin (before5Min)  :" + diffMin);
-      
-      if(diffMin<5){
-         return true;
-      }
-      
-      return false;
-      
+      CommonDTO cmDTO = new CommonDTO();
+      if(diffMin<5&&diffMin>=0){
+    	 cmDTO.setColor("0");
+         return cmDTO; //빨간색
+      }else if(diffMin<0) {//DB 삭제 , 회색(기본색으로 설정)
+    	  CommonDAO cmDAO = new CommonDAO();
+    	  String seat_Num = cmDAO.selectMemberSeat(member_id);
+    	  cmDTO.setSeat_Num(seat_Num);
+    	  cmDTO.setColor("-1");
+    	  cmDAO.deleteSeat(member_id);
+    	  return cmDTO;
+      }else if(diffMin>0)
+    	  cmDTO.setColor("2"); //넉넉한 시간.
+      return cmDTO;
    }
-
 }
-
 
