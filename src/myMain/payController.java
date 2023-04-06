@@ -4,8 +4,12 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 
@@ -24,6 +28,11 @@ public class payController implements Initializable {
 	ToggleButton button6;
 	@FXML
 	TextField memberId;
+	private Parent payView;
+
+	public void setPayView(Parent payView) {
+		this.payView = payView;
+	}
 
 	private payService service;
 	private Opener opener;
@@ -54,6 +63,24 @@ public class payController implements Initializable {
 	}
 
 	// 현금결제 버튼
+	public void payBtnSelected(ActionEvent e) {
+		
+		for(int i= 1 ; i<7;i++) {
+			String btnName = "#button"+i;
+			ToggleButton btn = (ToggleButton) payView.lookup(btnName);
+			btn.setStyle("-fx-background-color:#585858");
+		}
+		
+		seatViewService svSer = new seatViewService();
+		String btn = svSer.idExtract(e);
+		//Button btn2 = (Button) adminSeat.lookup(useSeat);
+		//transparent
+		ToggleButton btn1 = (ToggleButton) payView.lookup(btn);
+		if(btn1.isSelected()) {
+			btn1.setStyle("-fx-background-color:#9999FF");
+		}
+		
+	}
 	   public void payProc() {
 	      // 아이디 검증
 	      if (memberId.getText().length() != 11) {
@@ -124,6 +151,11 @@ public class payController implements Initializable {
 	// 회원 화면에서 취소 버튼
 	public void payCancelProc() {
 		opener.homeChangeOpen();
+	}
+
+	public void setLoader() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

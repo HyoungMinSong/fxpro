@@ -3,8 +3,10 @@ package myMain;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import myMain.CommonService;
@@ -29,10 +31,16 @@ public class WpayController implements Initializable {
 	TextField memberId;
 
 	private Opener opener;
-	
+	private Parent payView;
+
+	public void setPayView(Parent payView) {
+		this.payView = payView;
+	}
+
 	public void setOpener(Opener opener) {
 		this.opener = opener;
 	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		memberId.textProperty().addListener((a, before, after) -> {
@@ -51,67 +59,86 @@ public class WpayController implements Initializable {
 
 	}
 
+	public void payBtnSelected(ActionEvent e) {
+
+		for (int i = 1; i < 8; i++) {
+			String btnName = "#button" + i;
+			ToggleButton btn = (ToggleButton) payView.lookup(btnName);
+			btn.setStyle("-fx-background-color:#585858");
+		}
+
+		seatViewService svSer = new seatViewService();
+		String btn = svSer.idExtract(e);
+		// Button btn2 = (Button) adminSeat.lookup(useSeat);
+		// transparent
+		ToggleButton btn1 = (ToggleButton) payView.lookup(btn);
+		if (btn1.isSelected()) {
+			btn1.setStyle("-fx-background-color:#6699CC");
+		}
+
+	}
+
 	// 현금결제 버튼
-	   public void payProc() {
-	      // 아이디 검증
-	      if (memberId.getText().length() != 11) {
-	         CommonService.msg("휴대폰번호를 입력하세요.");
-	         return;
-	      }
+	public void payProc() {
+		// 아이디 검증
+		if (memberId.getText().length() != 11) {
+			CommonService.msg("휴대폰번호를 입력하세요.");
+			return;
+		}
 
-	      // 시간 = 분단위
-	      if (button1.isSelected()) {
-	         opener.mApiOpen("W1", memberId.getText(), "cash");
-	      } else if (button2.isSelected()) {
-	         opener.mApiOpen("W2", memberId.getText(), "cash");
-	      } else if (button3.isSelected()) {
-	         opener.mApiOpen("W4", memberId.getText(), "cash");
-	      } else if (button4.isSelected()) {
-	         opener.mApiOpen("W30", memberId.getText(), "cash");
-	      } else if (button5.isSelected()) {
-	         opener.mApiOpen("W50", memberId.getText(), "cash");
-	      } else if (button6.isSelected()) {
-	         opener.mApiOpen("W100", memberId.getText(), "cash");
-	      } else if (button7.isSelected()) {
-		     opener.mApiOpen("W200", memberId.getText(), "cash");
-		  } else {
-	         CommonService.msg("상품을 선택해주세요.");
-	         return;
-	      }
+		// 시간 = 분단위
+		if (button1.isSelected()) {
+			opener.mApiOpen("W1", memberId.getText(), "cash");
+		} else if (button2.isSelected()) {
+			opener.mApiOpen("W2", memberId.getText(), "cash");
+		} else if (button3.isSelected()) {
+			opener.mApiOpen("W4", memberId.getText(), "cash");
+		} else if (button4.isSelected()) {
+			opener.mApiOpen("W30", memberId.getText(), "cash");
+		} else if (button5.isSelected()) {
+			opener.mApiOpen("W50", memberId.getText(), "cash");
+		} else if (button6.isSelected()) {
+			opener.mApiOpen("W100", memberId.getText(), "cash");
+		} else if (button7.isSelected()) {
+			opener.mApiOpen("W200", memberId.getText(), "cash");
+		} else {
+			CommonService.msg("상품을 선택해주세요.");
+			return;
+		}
 
-	      System.out.println("현금 결제창 이동");
-	   }
+		System.out.println("현금 결제창 이동");
+	}
 
-	   // 카드결제 버튼
-	   public void cardProc() {
-	      // 아이디 검증
-	      if (memberId.getText().length() != 11) {
-	         CommonService.msg("휴대폰번호를 입력하세요.");
-	         return;
-	      }
+	// 카드결제 버튼
+	public void cardProc() {
+		// 아이디 검증
+		if (memberId.getText().length() != 11) {
+			CommonService.msg("휴대폰번호를 입력하세요.");
+			return;
+		}
 
-	      // 시간 = 분단위
-	      if (button1.isSelected()) {
-	         opener.mApiOpen("W1", memberId.getText(), "card");
-	      } else if (button2.isSelected()) {
-	         opener.mApiOpen("W2", memberId.getText(), "card");
-	      } else if (button3.isSelected()) {
-	         opener.mApiOpen("W4", memberId.getText(), "card");
-	      } else if (button4.isSelected()) {
-	         opener.mApiOpen("W30", memberId.getText(), "card");
-	      } else if (button5.isSelected()) {
-	         opener.mApiOpen("W50", memberId.getText(), "card");
-	      } else if (button6.isSelected()) {
-	         opener.mApiOpen("W100", memberId.getText(), "card");
-	      } else if (button7.isSelected()) {
-			 opener.mApiOpen("W200", memberId.getText(), "cash");
-	      } else {
-	         CommonService.msg("상품을 선택해주세요.");
-	         return;
-	      }
+		// 시간 = 분단위
+		if (button1.isSelected()) {
+			opener.mApiOpen("W1", memberId.getText(), "card");
+		} else if (button2.isSelected()) {
+			opener.mApiOpen("W2", memberId.getText(), "card");
+		} else if (button3.isSelected()) {
+			opener.mApiOpen("W4", memberId.getText(), "card");
+		} else if (button4.isSelected()) {
+			opener.mApiOpen("W30", memberId.getText(), "card");
+		} else if (button5.isSelected()) {
+			opener.mApiOpen("W50", memberId.getText(), "card");
+		} else if (button6.isSelected()) {
+			opener.mApiOpen("W100", memberId.getText(), "card");
+		} else if (button7.isSelected()) {
+			opener.mApiOpen("W200", memberId.getText(), "cash");
+		} else {
+			CommonService.msg("상품을 선택해주세요.");
+			return;
+		}
 
-	      System.out.println("카드 결제창 이동");
-	   }
+		System.out.println("카드 결제창 이동");
+	}
 
 	// 회원 화면에서 취소 버튼
 	public void payCancelProc() {

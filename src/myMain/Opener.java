@@ -140,6 +140,7 @@ public class Opener {
 			e.printStackTrace();
 		}
 		payController pc = loader.getController();
+		pc.setPayView(TodayTicketOpenForm);
 		pc.setOpener(this);
 		
 		Scene scene = new Scene(TodayTicketOpenForm);  
@@ -182,7 +183,6 @@ public class Opener {
 		lc.setOpener(this);
 		lc.setLockerForm(lockerViewForm);
 		lc.startLocker();
-		
 		
 		Scene scene = new Scene(lockerViewForm);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
 		primaryStage.setTitle("자리 이동");
@@ -243,6 +243,7 @@ public class Opener {
 			e.printStackTrace();
 		}
 		WpayController wc = loader.getController();
+		wc.setPayView(WeekTicketOpenForm);
 		wc.setOpener(this);
 		
 		Scene scene = new Scene(WeekTicketOpenForm);  
@@ -283,6 +284,7 @@ public class Opener {
 		LpayController lc = loader.getController();
 		lc.setOpener(this);
 		lc.setLockerNum(btnId);
+		lc.setPayView(lockerPayOpenForm);
 		
 		Scene scene = new Scene(lockerPayOpenForm);  
 		primaryStage.setTitle("자리 이동");
