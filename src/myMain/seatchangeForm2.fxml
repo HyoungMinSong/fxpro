@@ -24,8 +24,8 @@
             <Font size="25.0" />
          </font>
       </TextField>
-      <Button alignment="CENTER" layoutX="52.0" layoutY="779.0" mnemonicParsing="false" onAction="#prevBtn" prefHeight="70.0" prefWidth="200.0" text="이전으로" />
-      <Button contentDisplay="CENTER" layoutX="399.0" layoutY="779.0" mnemonicParsing="false" onAction="#nextBtn" prefHeight="70.0" prefWidth="200.0" text="다음으로" />
+      <Button alignment="CENTER" layoutX="52.0" layoutY="779.0" mnemonicParsing="false" onAction="#prevBtn" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #585858;" text="이전으로" textFill="#f2efef" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="399.0" layoutY="779.0" mnemonicParsing="false" onAction="#nextBtn" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #585858;" text="다음으로" textFill="#f2efef" />
       <ImageView fitHeight="260.0" fitWidth="346.0" layoutX="163.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/123.png" />
