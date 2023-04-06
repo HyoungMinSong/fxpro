@@ -16,7 +16,7 @@ public class seatViewDAO {
    
    public seatViewDAO() {
       
-      String url = "jdbc:oracle:thin:@localhost:1521:xe";
+      String url = "jdbc:oracle:thin:@localhost:1522:xe";
       String username = "douzone";
       String password = "oracle";
 
@@ -170,6 +170,20 @@ public class seatViewDAO {
       }
       
    }
+
+	public void Update_limit_time2(String member_id, java.sql.Date date1) {
+		String sql = "UPDATE member SET LIMIT_Time=? WHERE member_id =?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setDate(1, date1);
+			ps.setString(2, member_id);
+			ps.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
    public String getLimit_TimeForSpread(String member_id) {
       String sql = "SELECT limit_time FROM member WHERE member_id = ?";

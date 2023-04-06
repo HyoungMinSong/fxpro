@@ -87,6 +87,25 @@ public class CommonDAO {
 		}
 		return false;
 	}
+
+
+	public String selectLimit_time(String member_id) {
+		String sql = "select limit_time from member where member_id = ?";
+		String limit_time="";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, member_id);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				limit_time =rs.getString("limit_time");
+				return limit_time;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return limit_time;
+	}
 	
 
 }
