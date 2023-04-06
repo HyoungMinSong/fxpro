@@ -19,6 +19,32 @@ public class CommonService {
       alert.setContentText(contentText);
       alert.show();
    }
+   public void updateLimit_time(int time, String member_id) {
+	 System.out.println("updataeLimti_time으로왔음");
+	   seatViewDAO dao = new seatViewDAO();
+	   String limit_Time = dao.getLimit_TimeForSpread(member_id); //저장되어 있는 최대이용시간을 불러옴.
+	   SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+      Date limit_time1 = null;
+      Date now = new Date();
+         try {
+            limit_time1 = transFormat.parse(limit_Time);
+         } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+         }
+         Calendar cal1 = Calendar.getInstance();
+         cal1.setTime(limit_time1); // 시간 설정
+         //cal1.add(Calendar.YEAR, 2); // 년 연산
+         //cal1.add(Calendar.MONTH, 4); // 월 연산
+         //cal1.add(Calendar.DATE, day); // 일 연산
+         //cal1.add(Calendar.HOUR_OF_DAY , time); // 시간 연산
+         cal1.add(Calendar.MINUTE, time); // 분 연산
+         java.sql.Date date1 =  new java.sql.Date(cal1.getTimeInMillis());
+         System.out.println("여기까진 연산" + date1);
+         dao.Update_limit_time2(member_id,date1);
+         
+	}
+  
    public java.sql.Date getLimit_Time(String enter_Time, int member_Time) { //최대 이용 가능 시간을 구하는 로직
        //enter_Time (23/03/31 13:14) / member_Time 100 // // member Time 을 일 , 시간 ,분으로 나눔.
       SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -70,6 +96,8 @@ public class CommonService {
       String limit_Time = dao.getLimit_TimeForSpread(member_id); //저장되어 있는 최대이용시간을 불러옴.
       System.out.println("limit Time(before5Min)  :" + limit_Time);
       SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+      System.out.println("transFormat : " + transFormat );
+      System.out.println("limit_Time : " + limit_Time);
       Date limit_time1 = null;
       Date now = new Date();
          try {
@@ -95,5 +123,7 @@ public class CommonService {
     	  cmDTO.setColor("2"); //넉넉한 시간.
       return cmDTO;
    }
+
+
 }
 

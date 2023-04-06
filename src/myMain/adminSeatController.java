@@ -16,6 +16,9 @@ public class adminSeatController implements Initializable{
 		// TODO Auto-generated method stub
 		adSer = new adminSeatService();
 	}
+	public void setView(Parent adminMain) {
+		this.adminMain = adminMain;
+	}
 	public void setSeatView(Parent adminMain) {
 		// TODO Auto-generated method stub
 		this.adminMain = adminMain;
@@ -29,10 +32,18 @@ public class adminSeatController implements Initializable{
 		adSer.buttonSelect(e,adminMain);
 		
 	}
-
-	public void setView(Parent adminMain) {
-		this.adminMain = adminMain;
-		
+	public void adminPlusTime() {
+		adSer.adminEnterTimePlus();
 	}
+	public void adminExit() {
+		adSer.adminExit();
+	}
+	public void adminEnterTimePlus() {
+		adSer.adminEnterTimePlus();
+	}
+	public void adminSeatMove() {
+		adSer.adminSeatMove();
+	}
+	
 
 }
