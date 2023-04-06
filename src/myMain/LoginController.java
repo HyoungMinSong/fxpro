@@ -88,6 +88,10 @@ public class LoginController implements Initializable{
 		}
 		at.show();
 	}
+	
+	public void adminCall() {//관리자 페이지 열기 
+		opener.adminPageOpen();
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

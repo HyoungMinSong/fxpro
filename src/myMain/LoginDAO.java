@@ -14,7 +14,7 @@ public class LoginDAO {
 	public LoginDAO() {
 		try {
 		Class.forName("oracle.jdbc.OracleDriver");
-		con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1522:xe","douzone","oracle");
+		con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","douzone","oracle");
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

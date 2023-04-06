@@ -14,7 +14,7 @@ public class adminSeatDAO {
     private ResultSet rs;
 
 	public adminSeatDAO() {
-	  String url = "jdbc:oracle:thin:@localhost:1522:xe";
+	  String url = "jdbc:oracle:thin:@localhost:1521:xe";
       String username = "douzone";
       String password = "oracle";
 

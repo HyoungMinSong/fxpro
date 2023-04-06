@@ -88,4 +88,11 @@
          </children>
       </FlowPane>
    </bottom>
+   <top>
+      <FlowPane alignment="TOP_RIGHT" prefHeight="36.0" prefWidth="650.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#adminCall" text="관리자" />
+         </children>
+      </FlowPane>
+   </top>
 </BorderPane>

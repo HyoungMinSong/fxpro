@@ -70,6 +70,8 @@ public class CommonService {
       String limit_Time = dao.getLimit_TimeForSpread(member_id); //저장되어 있는 최대이용시간을 불러옴.
       System.out.println("limit Time(before5Min)  :" + limit_Time);
       SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+      System.out.println("transFormat : " + transFormat );
+      System.out.println("limit_Time : " + limit_Time);
       Date limit_time1 = null;
       Date now = new Date();
          try {

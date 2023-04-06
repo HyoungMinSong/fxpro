@@ -10,7 +10,7 @@ import javafx.scene.control.ToggleButton;
 import myMain.CommonService;
 import myMain.Opener;
 
-public class AdminAccessController implements Initializable {
+public class AdminMainController implements Initializable {
 //	@FXML
 //	ToggleButton button1;
 
@@ -24,6 +24,11 @@ public class AdminAccessController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 
+	}
+	
+	
+	public void buyBtn() {
+		opener.buyPageOpen();
 	}
 
 }

@@ -3,6 +3,8 @@ package myMain;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import adminBlackList.MainController;
+import adminBuy.MainHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -331,5 +333,79 @@ public class Opener {
       primaryStage.setScene(scene);
       primaryStage.show();
    }
+
+	public void adminPageOpen() {
+		// TODO Auto-generated method stub
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("adminMainPage.fxml"));
+	    System.out.println(getClass().getResource("adminMainPage.fxml"));
+	    System.out.println(getClass().getResource("/adminAccess/adminMainPage.fxml"));
+	    Parent adminMainOpenForm = null;
+	    try {
+	    	adminMainOpenForm = loader.load();
+	    } catch (IOException e) {
+	       e.printStackTrace();
+	    }
+	    AdminMainController am = loader.getController();
+	    am.setOpener(this);
+	    
+	    Scene scene = new Scene(adminMainOpenForm);  
+	    primaryStage.setTitle("자리 이동");
+	    primaryStage.setScene(scene);
+	    primaryStage.show();
+	}
+
+	public void buyPageOpen() {
+		// TODO Auto-generated method stub
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("/adminBuy/adminForm.fxml"));
+	    Parent adminbuypenForm = null;
+	    try {
+	    	adminbuypenForm = loader.load();
+	    } catch (IOException e) {
+	       e.printStackTrace();
+	    }
+	    MainHandler mh = loader.getController();
+	    mh.setOpener(this);
+	    
+	    Scene scene = new Scene(adminbuypenForm);  
+	    primaryStage.setTitle("자리 이동");
+	    primaryStage.setScene(scene);
+	    primaryStage.show();
+	}
+	
+	public void accessOpen() {
+		// TODO Auto-generated method stub
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("/adminAccess/adminForm.fxml"));
+	    Parent adminAccessopenForm = null;
+	    try {
+	    	adminAccessopenForm = loader.load();
+	    } catch (IOException e) {
+	       e.printStackTrace();
+	    }
+	    adminAccess.MainHandler mh = loader.getController();
+	    mh.setOpener(this);
+	    
+	    Scene scene = new Scene(adminAccessopenForm);  
+	    primaryStage.setTitle("자리 이동");
+	    primaryStage.setScene(scene);
+	    primaryStage.show();
+	}
+
+	public void blackOpen() {
+		// TODO Auto-generated method stub
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("/adminBlackList/blackListForm.fxml"));
+	    Parent adminBlackOpenForm = null;
+	    try {
+	    	adminBlackOpenForm = loader.load();
+	    } catch (IOException e) {
+	       e.printStackTrace();
+	    }
+	    MainController mc = loader.getController();
+	    mc.setOpener(this);
+	    
+	    Scene scene = new Scene(adminBlackOpenForm);  
+	    primaryStage.setTitle("자리 이동");
+	    primaryStage.setScene(scene);
+	    primaryStage.show();
+	}
 			
 }
