@@ -90,7 +90,7 @@ public class LoginController implements Initializable{
 	}
 	
 	public void adminCall() {//관리자 페이지 열기 
-		opener.adminPageOpen();
+		opener.seatAdminOpen();
 	}
 
 	@Override

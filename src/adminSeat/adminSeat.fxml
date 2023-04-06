@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminSeat.adminSeatController">
+   <left>
+      <VBox prefHeight="658.0" prefWidth="208.0" spacing="55.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="250.0" text="좌석 &amp; 사물함 보기">
+               <font>
+                  <Font name="Hancom MalangMalang Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#buyBtn" prefHeight="100.0" prefWidth="250.0" text="매출 정보">
+               <font>
+                  <Font name="Hancom MalangMalang Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#accessBtn" prefHeight="100.0" prefWidth="250.0" text="출입 기록">
+               <font>
+                  <Font name="Hancom MalangMalang Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#blackBtn" prefHeight="100.0" prefWidth="250.0" text="블랙리스트 등록">
+               <font>
+                  <Font name="Hancom MalangMalang Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <top>
+      <FlowPane alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="1250.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#homeBtn" text="홈으로">
+               <FlowPane.margin>
+                  <Insets right="600.0" />
+               </FlowPane.margin>
+            </Button>
+            <Label text="관리자 페이지">
+               <font>
+                  <Font name="Hancom MalangMalang Bold" size="47.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets right="30.0" />
+         </padding>
+      </FlowPane>
+   </top>
+   <right>
+      <VBox alignment="CENTER" prefHeight="549.0" prefWidth="236.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane prefHeight="71.0" prefWidth="236.0">
+               <children>
+                  <Label text="회원번호" />
+                  <TextField fx:id="member_idField" />
+               </children>
+            </FlowPane>
+            <FlowPane prefHeight="71.0" prefWidth="236.0">
+               <children>
+                  <Label text="잔여시간" />
+                  <TextField fx:id="remain_timeField" />
+               </children>
+            </FlowPane>
+            <FlowPane prefHeight="71.0" prefWidth="236.0">
+               <children>
+                  <Label text="입장시간" />
+                  <TextField fx:id="enter_timeField" />
+               </children>
+            </FlowPane>
+            <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#adminExit" prefHeight="29.0" prefWidth="108.0" text="퇴실" />
+            <Button fx:id="addEnterTimeBtn" mnemonicParsing="false" onAction="#adminPlusTime" text="입장시간추가" />
+            <Button fx:id="seatMoveBtn" mnemonicParsing="false" onAction="#adminSeatMove" prefHeight="29.0" prefWidth="111.0" text="자리이동" />
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane alignment="CENTER" hgap="30.0" prefHeight="94.0" prefWidth="556.0">
+               <children>
+                  <Button fx:id="s1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="1" />
+                  <Button fx:id="s2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="2" />
+                  <Button fx:id="s3" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="3" />
+                  <Button fx:id="s4" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="4" />
+                  <Button fx:id="s5" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="5" />
+                  <Button fx:id="s6" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="6" />
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" hgap="30.0" prefHeight="94.0" prefWidth="556.0">
+               <children>
+                  <Button fx:id="s7" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="7" />
+                  <Button fx:id="s8" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="8" />
+                  <Button fx:id="s9" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="9" />
+                  <Button fx:id="s10" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="10" />
+                  <Button fx:id="s11" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="11" />
+                  <Button fx:id="s12" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="12" />
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" hgap="30.0" prefHeight="94.0" prefWidth="556.0">
+               <children>
+                  <Button fx:id="s13" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="13" />
+                  <Button fx:id="s14" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="14" />
+                  <Button fx:id="s15" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="15" />
+                  <Button fx:id="s16" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="16" />
+                  <Button fx:id="s17" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="17" />
+                  <Button fx:id="s18" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="18" />
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" hgap="30.0" prefHeight="94.0" prefWidth="556.0">
+               <children>
+                  <Button fx:id="s19" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="19" />
+                  <Button fx:id="s20" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="20" />
+                  <Button fx:id="s21" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="21" />
+                  <Button fx:id="s22" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="22" />
+                  <Button fx:id="s23" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="23" />
+                  <Button fx:id="s24" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="24" />
+               </children>
+            </FlowPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

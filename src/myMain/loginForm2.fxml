@@ -31,7 +31,10 @@
                               <Image url="@../img/park-tickets-couple.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="20.0" layoutY="101.0" text="당일이용권" textFill="WHITE" />
+                        <Label layoutX="20.0" layoutY="101.0" text="당일이용권" textFill="WHITE">
+                           <font>
+                              <Font name="KoPubBatang Light" size="12.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
                </graphic>
@@ -81,7 +84,10 @@
                <graphic>
                   <AnchorPane prefHeight="130.0" prefWidth="130.0">
                      <children>
-                        <Label layoutX="28.0" layoutY="93.0" text="자리이동" textFill="WHITE" />
+                        <Label layoutX="28.0" layoutY="93.0" text="자리이동" textFill="WHITE">
+                           <font>
+                              <Font name="KoPubBatang Light" size="12.0" />
+                           </font></Label>
                         <ImageView fitHeight="70.0" fitWidth="100.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/exchange.png" />
@@ -142,7 +148,7 @@
          <children>
             <Label alignment="CENTER" text="핸드폰 번호 뒷자리 8자리를 입력하세요. ">
                <font>
-                  <Font size="24.0" />
+                  <Font name="YES24" size="24.0" />
                </font>
             </Label>
             <TextField fx:id="hpNumber" prefHeight="50.0" prefWidth="294.0">
@@ -172,7 +178,7 @@
                   <Button layoutX="595.0" mnemonicParsing="false" onAction="#adminCall" style="-fx-border-color: white; -fx-background-color: white;" text="관리자" textFill="WHITE" />
                   <ImageView fitHeight="191.0" fitWidth="249.0" layoutX="207.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../Desktop/img/123.png" />
+                        <Image url="@../img/123.png" />
                      </image>
                   </ImageView>
                </children>

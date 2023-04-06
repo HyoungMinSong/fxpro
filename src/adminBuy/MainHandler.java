@@ -123,4 +123,12 @@ public class MainHandler implements Initializable {
     public void blackBtn() {
     	opener.blackOpen();
     }
+    
+	public void homeBtn() {
+		opener.homeChangeOpen();
+	}
+	
+	public void seatBtn() {
+		opener.seatAdminOpen();
+	}
 }

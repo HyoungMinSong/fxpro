@@ -16,7 +16,7 @@ public class seatViewDAO {
    
    public seatViewDAO() {
       
-      String url = "jdbc:oracle:thin:@localhost:1522:xe";
+      String url = "jdbc:oracle:thin:@localhost:1521:xe";
       String username = "douzone";
       String password = "oracle";
 

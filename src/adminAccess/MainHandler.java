@@ -122,4 +122,13 @@ public class MainHandler implements Initializable {
 	public void buyBtn() {
 		opener.buyPageOpen();
 	}
+	
+	public void homeBtn() {
+		opener.homeChangeOpen();
+		
+	}
+	
+	public void seatBtn() {
+		opener.seatAdminOpen();
+	}
 }

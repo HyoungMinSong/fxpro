@@ -16,10 +16,15 @@ public class ExitController implements Initializable{
 	@FXML
 	TextField hpNumber;
 	
+	private Opener opener;
 	
 	
 	
 	
+	
+	public void setOpener(Opener opener) {
+		this.opener = opener;
+	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		service = new ExitService();
@@ -106,6 +111,10 @@ public class ExitController implements Initializable{
 		}
 		
 		at.show();
+	}
+	
+	public void backProc() {
+		opener.homeChangeOpen();
 	}
 
 }

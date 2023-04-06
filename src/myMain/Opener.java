@@ -5,11 +5,13 @@ import java.util.ArrayList;
 
 import adminBlackList.MainController;
 import adminBuy.MainHandler;
+import adminSeat.adminSeatController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
+import lockerExtend.LpayController2;
 
 public class Opener {
 	private Stage primaryStage;
@@ -224,7 +226,8 @@ public class Opener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-//		mAPIController mc = loader.getController();
+		ExitController ec = loader.getController();
+		ec.setOpener(this);
 //		mc.dataProc(ticketId,hp,cardOrHyoun);
 	
 		
@@ -256,21 +259,22 @@ public class Opener {
 
 	public void lockerExtendOpen() {
 		// TODO Auto-generated method stub
-//		FXMLLoader loader = new FXMLLoader(getClass().getResource("Lpay.fxml"));
-//		
-//		Parent lockerExtendOpenForm = null;
-//		try {
-//			lockerExtendOpenForm = loader.load();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		WpayController wc = loader.getController();
-//		wc.setOpener(this);
-//		
-//		Scene scene = new Scene(lockerExtendOpenForm);  
-//		primaryStage.setTitle("자리 이동");
-//		primaryStage.setScene(scene);
-//		primaryStage.show();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/lockerExtend/Lpay2.fxml"));
+		
+		Parent lockerExtendOpenForm = null;
+		try {
+			lockerExtendOpenForm = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		LpayController2 lc2 = loader.getController();
+		lc2.setOpener(this);
+		lc2.setPayView(lockerExtendOpenForm);
+		
+		Scene scene = new Scene(lockerExtendOpenForm);  
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 
 	public void LPayOPen(String btnId) {
@@ -409,5 +413,48 @@ public class Opener {
 	    primaryStage.setScene(scene);
 	    primaryStage.show();
 	}
-			
+	
+	public void lApiOpen2(String ticketId, String hp, String cardOrHyoun,int lockerNum) {
+		// TODO Auto-generated method stub
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/lockerExtendApi/LockerAPI2.fxml"));
+		
+		Parent lAPIForm2 = null;
+		try {
+			lAPIForm2 = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		lockerExtendApi.LAPIController le = loader.getController();
+		le.setOpener(this);
+		le.dataProc(ticketId,hp,cardOrHyoun,lockerNum);
+		
+	
+		
+		Scene scene = new Scene(lAPIForm2);  //원래 있던 스테이지(메인 스테이지)에 따른 씬 넣기.
+		primaryStage.setTitle("자리 이동");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+	public void seatAdminOpen() {
+		// TODO Auto-generated method stub
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("/adminSeat/adminSeat.fxml"));
+	    Parent adminSeatOpenForm = null;
+	    try {
+	    	adminSeatOpenForm = loader.load();
+	    } catch (IOException e) {
+	       e.printStackTrace();
+	    }
+	    adminSeatController as = loader.getController();
+	    as.setOpener(this);
+	    as.startSeat(adminSeatOpenForm);
+	    as.setSeatView(adminSeatOpenForm);
+	    
+	    Scene scene = new Scene(adminSeatOpenForm);  
+	    primaryStage.setTitle("자리 이동");
+	    primaryStage.setScene(scene);
+	    primaryStage.show();
+	}
+	
+	
 }

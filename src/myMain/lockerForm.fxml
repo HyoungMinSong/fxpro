@@ -105,7 +105,7 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="25.0" layoutY="826.0" mnemonicParsing="false" onAction="#LockerCancelProc" prefHeight="50.0" prefWidth="180.0" text="Back" />
-      <Button layoutX="449.0" layoutY="826.0" mnemonicParsing="false" onAction="#NextPayProc" prefHeight="50.0" prefWidth="180.0" text="Next" />
+      <Button layoutX="25.0" layoutY="826.0" mnemonicParsing="false" onAction="#LockerCancelProc" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #585858;" text="Back" textFill="#f2efef" />
+      <Button layoutX="449.0" layoutY="826.0" mnemonicParsing="false" onAction="#NextPayProc" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #585858;" text="Next" textFill="#f2efef" />
    </children>
 </AnchorPane>

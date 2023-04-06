@@ -170,7 +170,13 @@ public class MainController implements Initializable {
 	public void accessBtn() {
 		opener.accessOpen();
 	}
-  
 	
+	public void homeBtn() {
+		opener.homeChangeOpen();
+	}
+	
+	public void seatBtn() {
+		opener.seatAdminOpen();
+	}
 
 }

@@ -16,17 +16,17 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#Exit1" prefHeight="100.0" prefWidth="100.0" text="1">
+                  <Button mnemonicParsing="false" onAction="#Exit1" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #585858;" text="1" textFill="#f2efef">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#Exit2" prefHeight="100.0" prefWidth="100.0" text="2">
+                  <Button mnemonicParsing="false" onAction="#Exit2" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #585858;" text="2" textFill="#f2efef">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="exit3" mnemonicParsing="false" onAction="#Exit3" prefHeight="100.0" prefWidth="100.0" text="3">
+                  <Button fx:id="exit3" mnemonicParsing="false" onAction="#Exit3" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #585858;" text="3" textFill="#f2efef">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -35,39 +35,17 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
                <children>
-                  <Button fx:id="exit4" mnemonicParsing="false" onAction="#Exit4" prefHeight="100.0" prefWidth="100.0" text="4">
+                  <Button fx:id="exit4" mnemonicParsing="false" onAction="#Exit4" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #585858;" text="4" textFill="#f2efef">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="exit5" mnemonicParsing="false" onAction="#Exit5" prefHeight="100.0" prefWidth="100.0" text="5">
+                  <Button fx:id="exit5" mnemonicParsing="false" onAction="#Exit5" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #585858;" text="5" textFill="#f2efef">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="exit6" mnemonicParsing="false" onAction="#Exit6" prefHeight="100.0" prefWidth="100.0" text="6">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-               </children>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
-               <children>
-                  <Button fx:id="exit7" mnemonicParsing="false" onAction="#Exit7" prefHeight="100.0" prefWidth="100.0" text="7">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="exit8" mnemonicParsing="false" onAction="#Exit8" prefHeight="100.0" prefWidth="100.0" text="8">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="exit9" mnemonicParsing="false" onAction="#Exit9" prefHeight="100.0" prefWidth="100.0" text="9">
+                  <Button fx:id="exit6" mnemonicParsing="false" onAction="#Exit6" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #585858;" text="6" textFill="#f2efef">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -79,7 +57,29 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
                <children>
-                  <Button fx:id="exit0" mnemonicParsing="false" onAction="#Exit0" prefHeight="100.0" prefWidth="100.0" text="0">
+                  <Button fx:id="exit7" mnemonicParsing="false" onAction="#Exit7" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #585858;" text="7" textFill="#f2efef">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exit8" mnemonicParsing="false" onAction="#Exit8" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #585858;" text="8" textFill="#f2efef">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exit9" mnemonicParsing="false" onAction="#Exit9" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #585858;" text="9" textFill="#f2efef">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+               <children>
+                  <Button fx:id="exit0" mnemonicParsing="false" onAction="#Exit0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #585858;" text="0" textFill="#f2efef">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -106,7 +106,7 @@
             </FlowPane>
             <FlowPane alignment="CENTER" prefHeight="146.0" prefWidth="650.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#exitCheck" prefHeight="52.0" prefWidth="375.0" text="퇴실 확인">
+                  <Button mnemonicParsing="false" onAction="#exitCheck" prefHeight="52.0" prefWidth="375.0" style="-fx-background-color: #585858;" text="퇴실 확인" textFill="#f2efef">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -114,7 +114,7 @@
                         <Insets bottom="20.0" />
                      </FlowPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#backProc" prefHeight="52.0" prefWidth="375.0" text="이전으로">
+                  <Button mnemonicParsing="false" onAction="#backProc" prefHeight="52.0" prefWidth="375.0" style="-fx-background-color: #585858;" text="이전으로" textFill="#f2efef">
                      <font>
                         <Font size="24.0" />
                      </font>
