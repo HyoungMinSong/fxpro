@@ -6,6 +6,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
@@ -28,78 +30,78 @@
          <children>
             <FlowPane hgap="30.0" prefHeight="100.0" prefWidth="669.0" vgap="40.0">
                <children>
-                  <ToggleButton fx:id="button1" mnemonicParsing="false" prefHeight="115.0" prefWidth="115.0">
+                  <ToggleButton fx:id="button1" mnemonicParsing="false" onAction="#payBtnSelected" prefHeight="115.0" prefWidth="115.0" style="-fx-background-color: #585858; -fx-border-color: transparent;">
                      <toggleGroup>
                         <ToggleGroup fx:id="timeMenu" />
                      </toggleGroup>
                      <graphic>
                         <VBox alignment="CENTER" prefHeight="79.0" prefWidth="79.0" spacing="30.0">
                            <children>
-                              <Label prefWidth="20.0" scaleX="1.5" scaleY="1.5" text="1주" />
-                              <Label scaleX="1.5" scaleY="1.5" text="50000" />
+                              <Label scaleX="1.5" scaleY="1.5" text="1주" textFill="#f2efef" />
+                              <Label scaleX="1.5" scaleY="1.5" text="50000" textFill="#f2efef" />
                            </children>
                         </VBox>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton fx:id="button2" mnemonicParsing="false" prefHeight="115.0" prefWidth="115.0" toggleGroup="$timeMenu">
+                  <ToggleButton fx:id="button2" mnemonicParsing="false" onAction="#payBtnSelected" prefHeight="115.0" prefWidth="115.0" style="-fx-background-color: #585858;" toggleGroup="$timeMenu">
                      <graphic>
                         <VBox alignment="CENTER" prefHeight="79.0" prefWidth="79.0" spacing="30.0">
                            <children>
-                              <Label scaleX="1.5" scaleY="1.5" text="2주" />
-                              <Label scaleX="1.5" scaleY="1.5" text="80000" />
+                              <Label scaleX="1.5" scaleY="1.5" text="2주" textFill="#f2efef" />
+                              <Label scaleX="1.5" scaleY="1.5" text="80,000" textFill="#f2efef" />
                            </children>
                         </VBox>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton fx:id="button3" mnemonicParsing="false" prefHeight="115.0" prefWidth="115.0" toggleGroup="$timeMenu">
+                  <ToggleButton fx:id="button3" mnemonicParsing="false" onAction="#payBtnSelected" prefHeight="115.0" prefWidth="115.0" style="-fx-background-color: #585858;" toggleGroup="$timeMenu">
                      <graphic>
                         <VBox alignment="CENTER" prefHeight="79.0" prefWidth="79.0" spacing="30.0">
                            <children>
-                              <Label scaleX="1.5" scaleY="1.5" text="4주" />
-                              <Label scaleX="1.5" scaleY="1.5" text="140000" />
+                              <Label scaleX="1.5" scaleY="1.5" text="4주" textFill="#f2efef" />
+                              <Label scaleX="1.5" scaleY="1.5" text="140,000" textFill="#f2efef" />
                            </children>
                         </VBox>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton fx:id="button4" mnemonicParsing="false" prefHeight="115.0" prefWidth="115.0" toggleGroup="$timeMenu">
+                  <ToggleButton fx:id="button4" mnemonicParsing="false" onAction="#payBtnSelected" prefHeight="115.0" prefWidth="115.0" style="-fx-background-color: #585858;" toggleGroup="$timeMenu">
                      <graphic>
                         <VBox alignment="CENTER" prefHeight="79.0" prefWidth="79.0" spacing="30.0">
                            <children>
-                              <Label scaleX="1.5" scaleY="1.5" text="30시간" />
-                              <Label scaleX="1.5" scaleY="1.5" text="50000" />
+                              <Label scaleX="1.5" scaleY="1.5" text="30시간" textFill="#f2efef" />
+                              <Label scaleX="1.5" scaleY="1.5" text="50,000" textFill="#f2efef" />
                            </children>
                         </VBox>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton fx:id="button5" mnemonicParsing="false" prefHeight="115.0" prefWidth="115.0" toggleGroup="$timeMenu">
+                  <ToggleButton fx:id="button5" mnemonicParsing="false" onAction="#payBtnSelected" prefHeight="115.0" prefWidth="115.0" style="-fx-background-color: #585858;" toggleGroup="$timeMenu">
                      <graphic>
                         <VBox alignment="CENTER" prefHeight="79.0" prefWidth="79.0" spacing="30.0">
                            <children>
-                              <Label scaleX="1.5" scaleY="1.5" text="50시간" />
-                              <Label scaleX="1.5" scaleY="1.5" text="80000" />
+                              <Label scaleX="1.5" scaleY="1.5" text="50시간" textFill="#f2efef" />
+                              <Label scaleX="1.5" scaleY="1.5" text="80,000" textFill="#f2efef" />
                            </children>
                         </VBox>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton fx:id="button6" mnemonicParsing="false" prefHeight="115.0" prefWidth="115.0" toggleGroup="$timeMenu">
+                  <ToggleButton fx:id="button6" mnemonicParsing="false" onAction="#payBtnSelected" prefHeight="115.0" prefWidth="115.0" style="-fx-background-color: #585858;" toggleGroup="$timeMenu">
                      <graphic>
                         <VBox alignment="CENTER" prefHeight="79.0" prefWidth="79.0" spacing="30.0">
                            <children>
-                              <Label scaleX="1.5" scaleY="1.5" text="100시간" />
-                              <Label scaleX="1.5" scaleY="1.5" text="140000" />
+                              <Label scaleX="1.5" scaleY="1.5" text="100시간" textFill="#f2efef" />
+                              <Label scaleX="1.5" scaleY="1.5" text="140,000" textFill="#f2efef" />
                            </children>
                         </VBox>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton fx:id="button7" mnemonicParsing="false" prefHeight="115.0" prefWidth="115.0">
+                  <ToggleButton fx:id="button7" mnemonicParsing="false" onAction="#payBtnSelected" prefHeight="115.0" prefWidth="115.0" style="-fx-background-color: #585858;">
                      <toggleGroup>
                         <ToggleGroup fx:id="timeMenu1" />
                      </toggleGroup>
                      <graphic>
                         <VBox alignment="CENTER" prefHeight="79.0" prefWidth="79.0" spacing="30.0">
                            <children>
-                              <Label scaleX="1.5" scaleY="1.5" text="200시간" />
-                              <Label scaleX="1.5" scaleY="1.5" text="250000" />
+                              <Label scaleX="1.5" scaleY="1.5" text="200시간" textFill="#f2efef" />
+                              <Label scaleX="1.5" scaleY="1.5" text="250,000" textFill="#f2efef" />
                            </children>
                         </VBox>
                      </graphic>
@@ -133,24 +135,54 @@
       <HBox prefHeight="100.0" prefWidth="200.0" />
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <left>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#payCancelProc" prefHeight="78.0" prefWidth="173.0" text="이전으로" BorderPane.alignment="BOTTOM_LEFT">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#payCancelProc" prefHeight="77.0" prefWidth="203.0" style="-fx-background-color: #585858;" BorderPane.alignment="BOTTOM_LEFT">
                <font>
                   <Font size="25.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/left-arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <BorderPane.margin>
+                  <Insets bottom="3.0" left="4.0" />
+               </BorderPane.margin>
             </Button>
          </left>
          <right>
-            <Button mnemonicParsing="false" onAction="#cardProc" prefHeight="78.0" prefWidth="173.0" text="카드결제" BorderPane.alignment="BOTTOM_RIGHT">
+            <Button mnemonicParsing="false" onAction="#cardProc" prefHeight="78.0" prefWidth="118.0" style="-fx-background-color: #585858;" BorderPane.alignment="BOTTOM_RIGHT">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="56.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/credit-cards.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <BorderPane.margin>
+                  <Insets bottom="3.0" right="3.0" />
+               </BorderPane.margin>
             </Button>
          </right>
          <center>
-            <Button mnemonicParsing="false" onAction="#payProc" prefHeight="78.0" prefWidth="173.0" text="현금결제" BorderPane.alignment="BOTTOM_RIGHT">
+            <Button mnemonicParsing="false" onAction="#payProc" prefHeight="79.0" prefWidth="128.0" style="-fx-background-color: #585858;" BorderPane.alignment="BOTTOM_RIGHT">
                <font>
                   <Font size="25.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/cash.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <BorderPane.margin>
+                  <Insets bottom="3.0" right="4.0" />
+               </BorderPane.margin>
             </Button>
          </center>
       </BorderPane>

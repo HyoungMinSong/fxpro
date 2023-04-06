@@ -3,8 +3,10 @@ package myMain;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import myMain.CommonService;
@@ -30,8 +32,12 @@ public class LpayController implements Initializable {
 
 	private Opener opener;
 	private String lockerNum;
+	private Parent payView;
 	
 	
+	public void setPayView(Parent payView) {
+		this.payView = payView;
+	}
 	public void setLockerNum(String lockerNum) {
 		this.lockerNum = lockerNum;
 	}
@@ -44,6 +50,24 @@ public class LpayController implements Initializable {
 			String result = idLengthCheck(after);
 			memberId.setText(result);
 		});
+
+	}
+	public void payBtnSelected(ActionEvent e) {
+
+		for (int i = 1; i < 8; i++) {
+			String btnName = "#button" + i;
+			ToggleButton btn = (ToggleButton) payView.lookup(btnName);
+			btn.setStyle("-fx-background-color:#585858");
+		}
+
+		seatViewService svSer = new seatViewService();
+		String btn = svSer.idExtract(e);
+		// Button btn2 = (Button) adminSeat.lookup(useSeat);
+		// transparent
+		ToggleButton btn1 = (ToggleButton) payView.lookup(btn);
+		if (btn1.isSelected()) {
+			btn1.setStyle("-fx-background-color:#6699CC");
+		}
 
 	}
 
