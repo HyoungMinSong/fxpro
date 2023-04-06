@@ -4,33 +4,73 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="650.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myMain.LoginController">
    <center>
       <FlowPane alignment="CENTER" hgap="50.0" prefHeight="200.0" prefWidth="200.0" vgap="50.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#todayTicket" prefHeight="85.0" prefWidth="132.0" style="-fx-background-color: #585858;" text="당일이용권" textFill="#f2efef">
+            <Button mnemonicParsing="false" onMouseClicked="#todayTicket" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #585858;" textFill="#f2efef">
                <FlowPane.margin>
                   <Insets />
                </FlowPane.margin>
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
+               <graphic>
+                  <AnchorPane>
+                     <children>
+                        <ImageView fitHeight="70.0" fitWidth="100.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/park-tickets-couple.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="20.0" layoutY="101.0" text="당일이용권" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#seasonTicket" prefHeight="85.0" prefWidth="132.0" style="-fx-background-color: #585858;" text="정기이용권" textFill="#f2efef">
+            <Button mnemonicParsing="false" onAction="#seasonTicket" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #585858;" textFill="#f2efef">
                <font>
                   <Font name="MS Outlook" size="18.0" />
                </font>
+               <graphic>
+                  <AnchorPane>
+                     <children>
+                        <ImageView fitHeight="70.0" fitWidth="100.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/park-tickets-couple.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="20.0" layoutY="101.0" text="정기이용권" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#lockerTicket" prefHeight="85.0" prefWidth="132.0" style="-fx-background-color: #585858;" text="사물함이용권" textFill="#f2efef">
+            <Button mnemonicParsing="false" onAction="#lockerTicket" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #585858;" textFill="#f2efef">
                <font>
                   <Font name="MS Outlook" size="18.0" />
                </font>
+               <graphic>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="83.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/lockers.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="사물함이용권" textFill="WHITE" />
+                     </children>
+                  </VBox>
+               </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#seatChange" prefHeight="85.0" prefWidth="132.0" style="-fx-background-color: #585858;" text="자리이동" textFill="#f2efef">
+            <Button mnemonicParsing="false" onAction="#seatChange" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #585858;" textFill="#f2efef">
                <FlowPane.margin>
                   <Insets />
                </FlowPane.margin>
@@ -38,22 +78,58 @@
                   <Font name="MS Outlook" size="18.0" />
                   <Font name="Arial bold" size="18.0" />
                </font>
+               <graphic>
+                  <AnchorPane prefHeight="130.0" prefWidth="130.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="93.0" text="자리이동" textFill="WHITE" />
+                        <ImageView fitHeight="70.0" fitWidth="100.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/exchange.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#timeExtend" prefHeight="85.0" prefWidth="132.0" style="-fx-background-color: #585858;" text="연장하기" textFill="#f2efef">
+            <Button mnemonicParsing="false" onAction="#timeExtend" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #585858;" textFill="#f2efef">
                <FlowPane.margin>
                   <Insets />
                </FlowPane.margin>
                <font>
                   <Font name="MS Outlook" size="18.0" />
                </font>
+               <graphic>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="70.0" fitWidth="100.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/alarm-clock.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="26.0" layoutY="93.0" text="연장하기" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#seatCheckOut" prefHeight="85.0" prefWidth="132.0" style="-fx-background-color: #585858;" text="퇴실하기" textFill="#f2efef">
+            <Button mnemonicParsing="false" onAction="#seatCheckOut" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #585858;" textFill="#f2efef">
                <FlowPane.margin>
                   <Insets />
                </FlowPane.margin>
                <font>
                   <Font name="MS Outlook" size="18.0" />
                </font>
+               <graphic>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="70.0" fitWidth="100.0" layoutX="34.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/drills.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="27.0" layoutY="95.0" text="퇴실하기" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </graphic>
             </Button>
          </children>
          <padding>
@@ -69,7 +145,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="hpNumber" prefHeight="50.0" prefWidth="294.0" text="테ㅔㅌ테테">
+            <TextField fx:id="hpNumber" prefHeight="50.0" prefWidth="294.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -91,7 +167,16 @@
    <top>
       <FlowPane alignment="TOP_RIGHT" prefHeight="36.0" prefWidth="650.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#adminCall" text="관리자" />
+            <AnchorPane prefHeight="200.0" prefWidth="651.0">
+               <children>
+                  <Button layoutX="595.0" mnemonicParsing="false" onAction="#adminCall" style="-fx-border-color: white; -fx-background-color: white;" text="관리자" textFill="WHITE" />
+                  <ImageView fitHeight="191.0" fitWidth="249.0" layoutX="207.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Desktop/img/123.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </FlowPane>
    </top>
