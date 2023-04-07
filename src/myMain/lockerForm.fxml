@@ -9,103 +9,109 @@
    <children>
       <Label prefHeight="70.0" prefWidth="283.0" text="사물함이용권" wrapText="true">
          <font>
-            <Font name="System Bold" size="40.0" />
+            <Font name="YES24" size="40.0" />
          </font></Label>
       <Button fx:id="lock1" layoutX="25.0" layoutY="131.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="1">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font></Button>
       <Button fx:id="lock2" layoutX="185.0" layoutY="131.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="2">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font></Button>
       <Button fx:id="lock3" layoutX="343.0" layoutY="131.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="3">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font></Button>
       <Button fx:id="lock4" layoutX="504.0" layoutY="131.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="4">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font></Button>
       <Button fx:id="lock5" layoutX="25.0" layoutY="264.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="5">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font></Button>
       <Button fx:id="lock6" layoutX="185.0" layoutY="264.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="6">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font></Button>
       <Button fx:id="lock7" layoutX="345.0" layoutY="264.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="7">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock8" layoutX="504.0" layoutY="264.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="8">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock9" layoutX="25.0" layoutY="399.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="9">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock10" layoutX="185.0" layoutY="399.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="10">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock11" layoutX="345.0" layoutY="399.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="11">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock12" layoutX="504.0" layoutY="399.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="12">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock13" layoutX="25.0" layoutY="532.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="13">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock14" layoutX="185.0" layoutY="532.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="14">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock15" layoutX="345.0" layoutY="532.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="15">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock16" layoutX="504.0" layoutY="532.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="16">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock17" layoutX="25.0" layoutY="664.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="17">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock18" layoutX="185.0" layoutY="664.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="18">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock19" layoutX="343.0" layoutY="664.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="19">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
       <Button fx:id="lock20" layoutX="504.0" layoutY="664.0" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="100.0" prefWidth="125.0" text="20">
          <font>
-            <Font size="20.0" />
+            <Font name="YES Myoungjo Regular" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="25.0" layoutY="826.0" mnemonicParsing="false" onAction="#LockerCancelProc" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #585858;" text="Back" textFill="#f2efef" />
-      <Button layoutX="449.0" layoutY="826.0" mnemonicParsing="false" onAction="#NextPayProc" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #585858;" text="Next" textFill="#f2efef" />
+      <Button layoutX="25.0" layoutY="826.0" mnemonicParsing="false" onAction="#LockerCancelProc" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #585858;" text="Back" textFill="#f2efef">
+         <font>
+            <Font name="KoPubBatang Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="449.0" layoutY="826.0" mnemonicParsing="false" onAction="#NextPayProc" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #585858;" text="Next" textFill="#f2efef">
+         <font>
+            <Font name="KoPubBatang Bold" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

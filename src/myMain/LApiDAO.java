@@ -114,6 +114,37 @@ public class LApiDAO {
 			ps.setInt(1, api.getMemberTime()); //락커타임임
 			ps.setString(2, api.getMemberId());
 			ps.executeUpdate();
+			
+			sql = "INSERT INTO LOCKER VALUES (?,'Y',?)";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1,api.getLockerNum());
+			ps.setString(2, api.getMemberId());
+			ps.executeQuery();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	public void memberTimeUD2(LapiDTO api) {
+		PreparedStatement ps = null;
+		String sql = "SELECT locker_time FROM MEMBER WHERE member_id=?";
+		ResultSet rs = null;
+		int time=api.getMemberTime();
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, api.getMemberId());
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				time+=rs.getInt("locker_time");
+				api.setMemberTime(time); //락커타임임
+			}
+			sql = "UPDATE member SET locker_time = ? WHERE member_id = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, api.getMemberTime()); //락커타임임
+			ps.setString(2, api.getMemberId());
+			ps.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

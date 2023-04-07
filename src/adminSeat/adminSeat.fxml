@@ -46,10 +46,13 @@
                <FlowPane.margin>
                   <Insets right="600.0" />
                </FlowPane.margin>
+               <font>
+                  <Font name="KoPubBatang Bold" size="12.0" />
+               </font>
             </Button>
             <Label text="관리자 페이지">
                <font>
-                  <Font name="Hancom MalangMalang Bold" size="47.0" />
+                  <Font name="YES24" size="47.0" />
                </font>
             </Label>
          </children>
@@ -66,25 +69,52 @@
          <children>
             <FlowPane prefHeight="71.0" prefWidth="236.0">
                <children>
-                  <Label text="회원번호" />
-                  <TextField fx:id="member_idField" />
+                  <Label text="회원번호">
+                     <font>
+                        <Font name="YES24" size="12.0" />
+                     </font></Label>
+                  <TextField fx:id="member_idField">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></TextField>
                </children>
             </FlowPane>
             <FlowPane prefHeight="71.0" prefWidth="236.0">
                <children>
-                  <Label text="잔여시간" />
-                  <TextField fx:id="remain_timeField" />
+                  <Label text="잔여시간">
+                     <font>
+                        <Font name="YES24" size="12.0" />
+                     </font></Label>
+                  <TextField fx:id="remain_timeField">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></TextField>
                </children>
             </FlowPane>
             <FlowPane prefHeight="71.0" prefWidth="236.0">
                <children>
-                  <Label text="입장시간" />
-                  <TextField fx:id="enter_timeField" />
+                  <Label text="입장시간">
+                     <font>
+                        <Font name="YES24" size="12.0" />
+                     </font></Label>
+                  <TextField fx:id="enter_timeField">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></TextField>
                </children>
             </FlowPane>
-            <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#adminExit" prefHeight="29.0" prefWidth="108.0" text="퇴실" />
-            <Button fx:id="addEnterTimeBtn" mnemonicParsing="false" onAction="#adminPlusTime" text="입장시간추가" />
-            <Button fx:id="seatMoveBtn" mnemonicParsing="false" onAction="#adminSeatMove" prefHeight="29.0" prefWidth="111.0" text="자리이동" />
+            <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#adminExit" prefHeight="29.0" prefWidth="108.0" text="퇴실">
+               <font>
+                  <Font name="KoPubBatang Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="addEnterTimeBtn" mnemonicParsing="false" onAction="#adminPlusTime" text="입장시간추가">
+               <font>
+                  <Font name="KoPubBatang Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="seatMoveBtn" mnemonicParsing="false" onAction="#adminSeatMove" prefHeight="29.0" prefWidth="111.0" text="자리이동">
+               <font>
+                  <Font name="KoPubBatang Bold" size="12.0" />
+               </font></Button>
          </children>
       </VBox>
    </right>
@@ -93,42 +123,114 @@
          <children>
             <FlowPane alignment="CENTER" hgap="30.0" prefHeight="94.0" prefWidth="556.0">
                <children>
-                  <Button fx:id="s1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="1" />
-                  <Button fx:id="s2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="2" />
-                  <Button fx:id="s3" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="3" />
-                  <Button fx:id="s4" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="4" />
-                  <Button fx:id="s5" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="5" />
-                  <Button fx:id="s6" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="6" />
+                  <Button fx:id="s1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="1">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="2">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s3" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="3">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s4" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="4">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s5" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="5">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s6" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="6">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
                </children>
             </FlowPane>
             <FlowPane alignment="CENTER" hgap="30.0" prefHeight="94.0" prefWidth="556.0">
                <children>
-                  <Button fx:id="s7" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="7" />
-                  <Button fx:id="s8" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="8" />
-                  <Button fx:id="s9" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="9" />
-                  <Button fx:id="s10" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="10" />
-                  <Button fx:id="s11" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="11" />
-                  <Button fx:id="s12" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="12" />
+                  <Button fx:id="s7" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="7">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s8" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="8">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s9" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="9">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s10" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="10">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s11" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="11">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s12" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="12">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
                </children>
             </FlowPane>
             <FlowPane alignment="CENTER" hgap="30.0" prefHeight="94.0" prefWidth="556.0">
                <children>
-                  <Button fx:id="s13" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="13" />
-                  <Button fx:id="s14" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="14" />
-                  <Button fx:id="s15" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="15" />
-                  <Button fx:id="s16" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="16" />
-                  <Button fx:id="s17" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="17" />
-                  <Button fx:id="s18" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="18" />
+                  <Button fx:id="s13" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="13">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s14" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="14">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s15" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="15">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s16" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="16">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s17" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="17">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s18" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="18">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
                </children>
             </FlowPane>
             <FlowPane alignment="CENTER" hgap="30.0" prefHeight="94.0" prefWidth="556.0">
                <children>
-                  <Button fx:id="s19" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="19" />
-                  <Button fx:id="s20" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="20" />
-                  <Button fx:id="s21" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="21" />
-                  <Button fx:id="s22" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="22" />
-                  <Button fx:id="s23" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="23" />
-                  <Button fx:id="s24" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="24" />
+                  <Button fx:id="s19" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="19">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s20" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="20">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s21" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="21">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s22" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="22">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s23" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="23">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="s24" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonSelect" prefHeight="60.0" prefWidth="60.0" text="24">
+                     <font>
+                        <Font name="YES Myoungjo Regular" size="12.0" />
+                     </font></Button>
                </children>
             </FlowPane>
          </children>

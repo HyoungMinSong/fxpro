@@ -113,7 +113,7 @@ public class apiService {
 		System.out.println("아이디 있음");
 		LApiDAO apiDao = new LApiDAO();
 		apiDao.buyInsert(api);
-		apiDao.memberTimeUD(api);
+		apiDao.memberTimeUD2(api);
 		
 		
 	}

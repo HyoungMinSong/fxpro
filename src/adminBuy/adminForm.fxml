@@ -14,7 +14,7 @@
    <left>
       <VBox prefHeight="658.0" prefWidth="208.0" spacing="55.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#homeBtn" prefHeight="100.0" prefWidth="250.0" text="좌석 &amp; 사물함 보기">
+            <Button mnemonicParsing="false" onAction="#seatBtn" prefHeight="100.0" prefWidth="250.0" text="좌석 &amp; 사물함 보기">
                <font>
                   <Font name="Hancom MalangMalang Bold" size="20.0" />
                </font>
@@ -43,14 +43,17 @@
    <top>
       <FlowPane alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="1250.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="홈으로">
+            <Button mnemonicParsing="false" onAction="#homeBtn" text="홈으로">
                <FlowPane.margin>
                   <Insets right="600.0" />
                </FlowPane.margin>
+               <font>
+                  <Font name="KoPubBatang Bold" size="12.0" />
+               </font>
             </Button>
             <Label text="관리자 페이지">
                <font>
-                  <Font name="Hancom MalangMalang Bold" size="47.0" />
+                  <Font name="YES24" size="47.0" />
                </font>
             </Label>
          </children>

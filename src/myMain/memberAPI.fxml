@@ -14,27 +14,27 @@
          <children>
             <Label text="구매일자">
                <font>
-                  <Font size="36.0" />
+                  <Font name="YES24" size="36.0" />
                </font>
             </Label>
             <Label text="상품명">
                <font>
-                  <Font size="36.0" />
+                  <Font name="YES24" size="36.0" />
                </font>
             </Label>
             <Label text="구매시간">
                <font>
-                  <Font size="36.0" />
+                  <Font name="YES24" size="36.0" />
                </font>
             </Label>
             <Label text="결제금액">
                <font>
-                  <Font size="36.0" />
+                  <Font name="YES24" size="36.0" />
                </font>
             </Label>
             <Label text="입금액">
                <font>
-                  <Font size="36.0" />
+                  <Font name="YES24" size="36.0" />
                </font>
             </Label>
          </children>
@@ -48,23 +48,23 @@
          <children>
             <Label fx:id="entryDate" prefHeight="45.0" prefWidth="220.0">
                <font>
-                  <Font size="36.0" />
+                  <Font name="YES Myoungjo Regular" size="36.0" />
                </font></Label>
             <Label fx:id="productName" prefHeight="45.0" prefWidth="220.0">
                <font>
-                  <Font size="36.0" />
+                  <Font name="YES Myoungjo Regular" size="36.0" />
                </font></Label>
             <Label fx:id="entryTime" prefHeight="45.0" prefWidth="220.0">
                <font>
-                  <Font size="36.0" />
+                  <Font name="YES Myoungjo Regular" size="36.0" />
                </font></Label>
             <Label fx:id="payment" prefHeight="45.0" prefWidth="220.0">
                <font>
-                  <Font size="36.0" />
+                  <Font name="YES Myoungjo Regular" size="36.0" />
                </font></Label>
             <TextField fx:id="entryPrice" prefHeight="45.0" prefWidth="220.0">
                <font>
-                  <Font size="36.0" />
+                  <Font name="YES Myoungjo Regular" size="36.0" />
                </font></TextField>
          </children>
          <BorderPane.margin>
@@ -75,14 +75,14 @@
    <bottom>
       <FlowPane alignment="BOTTOM_CENTER" hgap="50.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#check" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: #A4A4A4;" text="확인">
+            <Button mnemonicParsing="false" onAction="#check" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: #A4A4A4;" text="확인" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="29.0" />
+                  <Font name="KoPubBatang Bold" size="29.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#cancle" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: #A4A4A4;" text="취소">
+            <Button mnemonicParsing="false" onAction="#cancle" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: #A4A4A4;" text="취소" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="29.0" />
+                  <Font name="KoPubBatang Bold" size="29.0" />
                </font>
             </Button>
          </children>

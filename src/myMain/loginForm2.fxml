@@ -33,7 +33,7 @@
                         </ImageView>
                         <Label layoutX="20.0" layoutY="101.0" text="당일이용권" textFill="WHITE">
                            <font>
-                              <Font name="KoPubBatang Light" size="12.0" />
+                              <Font name="YES Myoungjo Regular" size="14.0" />
                            </font></Label>
                      </children>
                   </AnchorPane>
@@ -51,7 +51,10 @@
                               <Image url="@../img/park-tickets-couple.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="20.0" layoutY="101.0" text="정기이용권" textFill="WHITE" />
+                        <Label layoutX="20.0" layoutY="101.0" text="정기이용권" textFill="WHITE">
+                           <font>
+                              <Font name="YES Myoungjo Regular" size="14.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
                </graphic>
@@ -68,7 +71,10 @@
                               <Image url="@../img/lockers.png" />
                            </image>
                         </ImageView>
-                        <Label text="사물함이용권" textFill="WHITE" />
+                        <Label text="사물함이용권" textFill="WHITE">
+                           <font>
+                              <Font name="YES Myoungjo Regular" size="14.0" />
+                           </font></Label>
                      </children>
                   </VBox>
                </graphic>
@@ -86,7 +92,7 @@
                      <children>
                         <Label layoutX="28.0" layoutY="93.0" text="자리이동" textFill="WHITE">
                            <font>
-                              <Font name="KoPubBatang Light" size="12.0" />
+                              <Font name="YES Myoungjo Regular" size="14.0" />
                            </font></Label>
                         <ImageView fitHeight="70.0" fitWidth="100.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -112,7 +118,10 @@
                               <Image url="@../img/alarm-clock.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="26.0" layoutY="93.0" text="연장하기" textFill="WHITE" />
+                        <Label layoutX="26.0" layoutY="93.0" text="연장하기" textFill="WHITE">
+                           <font>
+                              <Font name="YES Myoungjo Regular" size="14.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
                </graphic>
@@ -132,7 +141,10 @@
                               <Image url="@../img/drills.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="27.0" layoutY="95.0" text="퇴실하기" textFill="WHITE" />
+                        <Label layoutX="27.0" layoutY="95.0" text="퇴실하기" textFill="WHITE">
+                           <font>
+                              <Font name="YES Myoungjo Regular" size="14.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
                </graphic>
@@ -164,7 +176,7 @@
                   <Insets />
                </opaqueInsets>
                <font>
-                  <Font name="MS Outlook" size="18.0" />
+                  <Font name="KoPubBatang Bold" size="18.0" />
                </font>
             </Button>
          </children>
